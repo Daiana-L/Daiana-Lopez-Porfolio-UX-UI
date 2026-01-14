@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "DonMorfi — Pasantía | Frontend Developer & UX/UI Designer (SaaS de e-commerce gastronómico tipo marketplace). Proyecto UX/UI real en desarrollo; por confidencialidad no se muestran pantallas finales",
     image: "/Proyect-portadas/donMorfi-portada.png",
     imagesLarge: [
-      "/Proyects-UX-UI/Home.png",
+      "/Proyects-UX-UI/HOME.png",
       "/Proyects-UX-UI/Branding-DonMorfi.png",
       "/Proyects-UX-UI/mobileApp.png"
     ],
