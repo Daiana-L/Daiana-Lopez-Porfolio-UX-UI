@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 
@@ -19,17 +20,17 @@ function Navbar() {
         {/* Menu Desktop */}
         <ul className="hidden md:flex space-x-6 text-white font-medium">
           <li>
-            <a href="#about" className="hover:text-sky-400 transition">
+            <a href="/#about" className="hover:text-sky-400 transition">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-sky-400 transition">
+            <a href="/#projects" className="hover:text-sky-400 transition">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-sky-400 transition">
+            <a href="/#contact" className="hover:text-sky-400 transition">
               Contacto
             </a>
           </li>
@@ -45,17 +46,17 @@ function Navbar() {
       {isOpen && (
         <ul className="md:hidden bg-gray-900 text-white flex flex-col items-center space-y-4 py-4">
           <li>
-            <a href="#about" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#about" onClick={toggleMenu} className="hover:text-sky-400 transition">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#projects" onClick={toggleMenu} className="hover:text-sky-400 transition">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="#contact" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#contact" onClick={toggleMenu} className="hover:text-sky-400 transition">
               Contacto
             </a>
           </li>

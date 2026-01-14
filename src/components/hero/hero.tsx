@@ -10,8 +10,8 @@ function Hero() {
 <section
   id="about"
   className="w-full flex items-center justify-center px-4 sm:px-6
-             pt-24 sm:pt-28 md:pt-20
-             min-h-[60vh] md:min-h-[70vh]"
+             pt-24 sm:pt-28 md:pt-40
+             min-h-[60vh] md:min-h-[40vh]"
 >
   <motion.div
     className="flex flex-col md:flex-row items-center gap-8 md:gap-10
@@ -37,12 +37,12 @@ function Hero() {
         Bienvenidos a mi porfolio profesional!
       </span>
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mt-1 mb-3">
-        Soy Daiana Celeste Lopez
+        Daiana Lopez, UX/UI Designer
       </h1>
       <p className="text-sm sm:text-base md:text-xl mb-3 text-gray-300 leading-relaxed">
-        Desarrolladora Frontend Junior enfocada en React, Next.js, TypeScript y TailwindCSS, 
-        con experiencia en bases de datos (MySQL, MongoDB), integración de APIs REST y 
-        optimización de interfaces responsivas.
+        Enfocada en la creación de
+       interfaces funcionales, accesibles y centradas en el usuario. He realizado diversos diseños en Figma, trabajando con
+       componentes reutilizables, Atomic Design y prototipos interactivos.
       </p>
       <p className="gap-1 font-medium flex items-center justify-center md:justify-start text-gray-400 mb-2">
         <PiMapPinLine size={24} className='mb-1'/> Buenos Aires, Argentina
@@ -51,7 +51,7 @@ function Hero() {
        Para conocerme mas personalmente puede usar mi chat de IA personalizado!
       </p>
       <a
-        href="/Daiana-Lopez-CV-fullStack.pdf"
+        href="/Daiana-L-CV-UX-UI.pdf"
         download
         className="inline-block sm:text-xl bg-sky-600 text-white px-8 sm:px-6 py-4 rounded-lg hover:bg-sky-700 transition mb-10"
       >

@@ -15,9 +15,6 @@ export default function Home() {
       {/* Hero */}
           <Hero/>
 
-      {/* Tecnologías */}
-         <Tecnologis/>
-
       {/* Proyectos */}
           <Proyects/>
 

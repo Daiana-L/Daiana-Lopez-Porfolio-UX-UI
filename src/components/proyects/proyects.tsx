@@ -1,42 +1,21 @@
 import React from 'react'
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const projects = [
-  {
-    name: "StudioConnect",
-    description: "Plataforma colaborativa para artistas y estudios.",
-    image: "/StudioConnect.png",
-    youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
-  },
-  {
-    name: "Hysteria 3D | Shop",
-    description: "E-commerce con autenticación y carrito funcional.",
-    image: "/hysteria.png",
-    youtube: "https://www.youtube.com/watch?v=6ZB_oYsGi3s",
-  },
-  {
-    name: "Aurora Studio",
-    description: "App web para gestión de turnos y registro de usuarios.",
-    image: "/aurora.png",
-    youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 function Proyects() {
   return (
     <div>
-     <section id="projects" className="py-10 bg-black scroll-mt-24 px-4 sm:px-6">
+     <section id="projects" className="pt-6 pb-10 bg-black scroll-mt-24 px-4 sm:px-6">
   <motion.div
-    className="max-w-6xl mx-auto flex flex-col justify-center items-center 
-               min-h-[60vh] md:min-h-[70vh] text-center
-               transform md:scale-[0.90] md:origin-center"
+    className="max-w-6xl mx-auto flex flex-col items-center text-center"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
   >
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-sky-600">
-      Proyectos
+    <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-10 text-sky-600">
+      Proyectos UX/UI Designer
     </h2>
 
     {/* Grid responsive */}
@@ -54,7 +33,7 @@ function Proyects() {
             alt={project.name}
             width={600}
             height={300}
-            className="w-full h-48 sm:h-56 md:h-64 object-cover"
+            className="w-full h-48 sm:h-56 md:h-54 object-cover"
           />
           <div className="p-4 sm:p-6 text-left flex flex-col flex-grow">
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-sky-400">
@@ -63,14 +42,12 @@ function Proyects() {
             <p className="mb-4 text-gray-300 text-sm sm:text-base flex-grow">
               {project.description}
             </p>
-            <a
-              href={project.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sky-600 hover:underline text-sm sm:text-base"
+            <Link
+              href={`/proyectos/${project.slug}`}
+              className="inline-flex items-center justify-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-lg transition text-sm sm:text-base w-fit mb-3"
             >
-              Ver demo en YouTube
-            </a>
+              Ver proyecto
+            </Link>
           </div>
         </motion.div>
       ))}
