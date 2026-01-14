@@ -10,7 +10,7 @@ function Hero() {
 <section
   id="about"
   className="w-full flex items-center justify-center px-4 sm:px-6
-             pt-24 sm:pt-28 md:pt-40
+             pt-24 sm:pt-28 md:pt-35
              min-h-[60vh] md:min-h-[40vh]"
 >
   <motion.div
