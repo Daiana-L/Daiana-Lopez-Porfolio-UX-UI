@@ -4,6 +4,7 @@ import emailjs from "emailjs-com";
 import { PiGithubLogoBold, PiLinkedinLogoBold } from 'react-icons/pi';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 
 function Contact() {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -100,7 +101,7 @@ function Contact() {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
                 <p className="text-xs sm:text-sm text-gray-400">
-                  Respondo en 24-48hs.
+                  Respondo en 1-24hs.
                 </p>
 
                 <button
@@ -116,11 +117,20 @@ function Contact() {
             {/* Tarjeta */}
             <div className="bg-gray-800/60 border border-gray-700/60 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 flex flex-col justify-between">
               <div>
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/avatars/happy.png"
+                    alt="Happy icon"
+                    width={180}
+                    height={180}
+                    className="rounded-full"
+                  />
+                </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
                   También me encontrás en
                 </h3>
                 <p className="text-gray-300 text-sm sm:text-base mb-6">
-                  Podés contactarme por LinkedIn para oportunidades laborales o networking.
+                  LinkedIn para oportunidades laborales o networking.
                 </p>
               </div>
 
