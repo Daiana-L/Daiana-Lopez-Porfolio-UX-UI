@@ -5,6 +5,7 @@ export type Project = {
   image: string;
   imagesLarge?: string[];
   youtube: string;
+  figmaEmbed?: string;
 };
 
 export const projects: Project[] = [
@@ -19,6 +20,18 @@ export const projects: Project[] = [
     ],
     youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
   },
+    {
+    slug: "DonMorfi",
+    name: "DonMorfi",
+    description:
+      "DonMorfi — Pasantía | UX/UI Designer SaaS de e-commerce gastronómico tipo marketplace. Diseñé la experiencia web y el prototipo mobile en Figma, trabajando con un Design System basado en Atomic Design para asegurar consistencia, escalabilidad y un handoff eficiente a desarrollo. Por acuerdos de confidencialidad, se muestran únicamente vistas representativas del proyecto",
+    image: "/Proyects-UX-UI/prototypo-mobile-portada.png",
+    imagesLarge: [
+    ],
+    youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
+      figmaEmbed:
+    "https://embed.figma.com/design/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=0-1&embed-host=share",
+  },
   {
     slug: "TaskApp",
     name: "TaskApp",
@@ -29,19 +42,6 @@ export const projects: Project[] = [
       "/Proyects-UX-UI/Task-App.png",
     ],
     youtube: "https://www.youtube.com/watch?v=6ZB_oYsGi3s",
-  },
-  {
-    slug: "DonMorfi",
-    name: "DonMorfi",
-    description:
-      "DonMorfi — Pasantía | Frontend Developer & UX/UI Designer (SaaS de e-commerce gastronómico tipo marketplace). Proyecto UX/UI real en desarrollo; por confidencialidad no se muestran pantallas finales",
-    image: "/Proyect-portadas/donMorfi-portada.png",
-    imagesLarge: [
-      "/Proyects-UX-UI/HOME.png",
-      "/Proyects-UX-UI/Branding-DonMorfi.png",
-      "/Proyects-UX-UI/mobileApp.png"
-    ],
-    youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
   },
 ];
 
