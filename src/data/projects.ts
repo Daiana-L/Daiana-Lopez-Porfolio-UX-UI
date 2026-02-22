@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   summary: string;
   image: string;
+  technologies: string[];
   mobilePreviewImage?: string;
   mobilePreviewImages?: string[];
   imagesLarge?: string[];
@@ -25,14 +26,15 @@ export const projects: Project[] = [
     summary:
       "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
     image: "/Proyects-UX-UI/S1.png",
+    technologies: ["UX Research", "Figma", "React", "Next.js", "Tailwind CSS", "Zustand"],
     mobilePreviewImage: "/mobile-preview/HOME-studioconnect.png",
     mobilePreviewImages: [
       "/mobile-preview/HOME-studioconnect.png",
       "/mobile-preview/studioconnet-studio.png",
     ],
     youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
-     prototypes: [
-        {
+    prototypes: [
+      {
         title: "Prototipo web",
         src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=14-25&t=4VzV52HoYFagGyyt-0&scaling=scale-down-width&content-scaling=fixed&page-id=14%3A24&starting-point-node-id=14%3A25",
       },
@@ -40,14 +42,14 @@ export const projects: Project[] = [
         title: "Prototipo web",
         src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=1-4334&t=TvM42Bt0CnMfttio-0&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A4333&starting-point-node-id=1%3A4334",
       },
-   ],
-    prototypesPlacement: "beforeImages",
-    imagesLarge: [
     ],
+    prototypesPlacement: "beforeImages",
+    imagesLarge: [],
   },
-    {
+  {
     slug: "DonMorfi",
     name: "DonMorfi",
+    technologies: ["UX/UI Design", "Figma", "Prototyping", "User Testing"],
     description:
       "DonMorfi — Pasantía | UX/UI Designer SaaS de e-commerce gastronómico tipo marketplace. Diseñé la experiencia web y el prototipo mobile en Figma, trabajando con un Design System basado en Atomic Design para asegurar consistencia, escalabilidad y un handoff eficiente a desarrollo. Por acuerdos de confidencialidad, se muestran únicamente vistas representativas del proyecto",
     summary:
@@ -59,8 +61,7 @@ export const projects: Project[] = [
       "/mobile-preview/prototypo-mobile-donmorfi.png",
       "/mobile-preview/business-1-donmorfi.png",
     ],
-    imagesLarge: [
-    ],
+    imagesLarge: [],
     youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
     prototypes: [
       {
@@ -82,6 +83,7 @@ export const projects: Project[] = [
   {
     slug: "TaskApp",
     name: "TaskApp",
+    technologies: ["UX Research", "User Interviews", "Figma", "Atomic Design", "Prototyping"],
     description:
       "Aplicación nativa para la gestión de tareas colaborativas. Incluye investigación UX (desk research, entrevistas, benchmarking, mapas de afinidad y empatía, proto-personas, cardsorting), definición de MVP, user flows y diseño UI con Atomic Design y prototipos interactivos",
     summary:

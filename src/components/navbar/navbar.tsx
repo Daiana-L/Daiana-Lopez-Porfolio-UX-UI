@@ -11,30 +11,40 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full bg-gray-900 md:p-6 shadow z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-        {/* Logo / Nombre */}
+    <nav className="fixed w-full bg-gray-900/80 backdrop-blur-md shadow-lg z-50">
+      <div className="flex justify-between items-center w-full px-6 py-4 max-w-6xl mx-auto">
+        {/* Logo con foto + nombre */}
         <Link
           href="/"
-          className="font-bold md:text-md text-white hover:text-sky-400 transition"
+          className="flex items-center gap-6 font-bold md:text-md text-white hover:text-sky-400 transition"
         >
+          <img
+            src="/foto-logo.png"
+            alt="Daiana Celeste Lopez"
+            className="w-10 h-10 rounded-full object-cover"
+          />
           Daiana Celeste Lopez
         </Link>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex space-x-6 text-white font-medium">
+        <ul className="hidden md:flex space-x-4 font-medium">
           <li>
-            <a href="/#about" className="hover:text-sky-400 transition">
+            <a href="/#about" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="/#projects" className="hover:text-sky-400 transition">
+            <a href="/#technologies" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+              Tecnologías
+            </a>
+          </li>
+          <li>
+            <a href="/#projects" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="/#contact" className="hover:text-sky-400 transition">
+            <a href="/#contact" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Contacto
             </a>
           </li>
@@ -48,19 +58,24 @@ function Navbar() {
 
       {/* Menu Mobile */}
       {isOpen && (
-        <ul className="md:hidden bg-gray-900 text-white flex flex-col items-center space-y-4 py-4">
+        <ul className="md:hidden bg-gray-900/80 backdrop-blur-md flex flex-col items-center space-y-4 py-4">
           <li>
-            <a href="/#about" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#about" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="/#projects" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#technologies" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+              Tecnologías
+            </a>
+          </li>
+          <li>
+            <a href="/#projects" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="/#contact" onClick={toggleMenu} className="hover:text-sky-400 transition">
+            <a href="/#contact" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Contacto
             </a>
           </li>

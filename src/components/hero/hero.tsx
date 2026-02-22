@@ -10,7 +10,7 @@ function Hero() {
 <section
   id="about"
   className="w-full flex items-center justify-center px-4 sm:px-6
-             pt-20 sm:pt-20 md:pt-25
+             pt-20 sm:pt-20 md:pt-20
              min-h-[60vh] md:min-h-[40vh]"
 >
   <motion.div
@@ -40,7 +40,7 @@ function Hero() {
         </span>
       </div>
 
-      <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mt-1 mb-3 text-slate-50">
+      <h1 className="font-bold mt-1 mb-3 text-slate-50" style={{ fontSize: '64px', fontWeight: '700' }}>
         Daiana Lopez, UX/UI Designer
       </h1>
 

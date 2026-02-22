@@ -14,41 +14,102 @@ function Proyects() {
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
   >
-    <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-10 text-sky-600">
-      Proyectos UX/UI Designer
-    </h2>
+    {/* Eyebrow con líneas decorativas */}
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
+          <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
+            PORTFOLIO
+          </span>
+          <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
+        </div>
+
+        {/* Título principal */}
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center leading-tight">
+          Proyectos UX/UI Designer
+        </h2>
+
+        {/* Descripción */}
+        <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+          Explora mis proyectos más destacados donde diseño experiencias digitales intuitivas y atractivas, combinando investigación de usuarios, prototipado y desarrollo frontend para crear soluciones que realmente importan.
+        </p>
 
     {/* Grid responsive */}
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full">
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className="bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition overflow-hidden flex flex-col"
+          className="bg-gray-900 border border-gray-800/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col group"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 }}
         >
-          <Image
-            src={project.image}
-            alt={project.name}
-            width={600}
-            height={300}
-            className="w-full h-48 sm:h-56 md:h-54 object-cover"
-          />
-          <div className="p-4 sm:p-6 text-left flex flex-col flex-grow">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-sky-400">
-              {project.name}
-            </h3>
+          {/* Imagen con overlay premium */}
+          <div className="relative h-48 sm:h-56 md:h-54 overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.name}
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            {/* Overlay sutil siempre visible + hover effect */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* Badges superiores */}
+            <div className="absolute top-3 left-3 flex gap-2">
+              <span className="bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
+                UX/UI
+              </span>
+              <span className="bg-sky-500/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
+                Case Study
+              </span>
+            </div>
+          </div>
+          
+          {/* Contenido con mejor jerarquía */}
+          <div className="p-6 text-left flex flex-col flex-grow">
+            {/* Título premium */}
+            <div className="mb-4">
+              <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+                {project.name}
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full" />
+            </div>
+            
+            {/* Descripción */}
             <p
-              className="mb-4 text-gray-300 text-sm sm:text-base flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
+              className="mb-5 text-gray-300 text-sm sm:text-base leading-relaxed flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
             >
               {project.summary}
             </p>
+            
+            {/* Chips de tecnologías */}
+            <div className="mb-5 flex flex-wrap gap-2">
+              {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                <span
+                  key={techIndex}
+                  className="inline-flex items-center px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 text-gray-300 text-xs font-medium rounded-full transition-colors duration-200 border border-gray-700/50"
+                >
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span className="inline-flex items-center px-3 py-1.5 bg-gray-800/50 text-gray-400 text-xs font-medium rounded-full border border-gray-700/50">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
+            </div>
+            
+            {/* Botón mejorado con icono */}
             <Link
               href={`/proyectos/${project.slug}`}
-              className="inline-flex items-center justify-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-lg transition text-sm sm:text-base w-fit mb-3"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 text-sm sm:text-base w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
             >
-              Ver proyecto
+              <span>Ver proyecto</span>
+              <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </motion.div>
