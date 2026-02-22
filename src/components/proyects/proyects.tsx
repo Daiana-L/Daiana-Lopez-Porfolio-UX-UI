@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 function Proyects() {
   return (
     <div>
-     <section id="projects" className="pt-2 sm:pt-4 pb-10 bg-black scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
+     <section id="projects" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
   <motion.div
     className="max-w-6xl mx-auto flex flex-col items-center text-center"
     initial={{ opacity: 0 }}

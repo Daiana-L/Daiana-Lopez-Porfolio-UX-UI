@@ -14,6 +14,18 @@ type TechCarouselProps = {
     items?: TechItem[];
 };
 
+const techColors: { [key: string]: { bg: string; text: string } } = {
+    React: { bg: "bg-cyan-900/50", text: "text-cyan-400" },
+    HTML: { bg: "bg-orange-900/50", text: "text-orange-400" },
+    CSS: { bg: "bg-blue-900/50", text: "text-blue-400" },
+    JavaScript: { bg: "bg-yellow-900/50", text: "text-yellow-400" },
+    "Next.js": { bg: "bg-gray-800/50", text: "text-gray-300" },
+    "Tailwind CSS": { bg: "bg-cyan-900/50", text: "text-cyan-400" },
+    Figma: { bg: "bg-purple-900/50", text: "text-purple-400" },
+    "Adobe (Photoshop)": { bg: "bg-blue-900/50", text: "text-blue-400" },
+    Webflow: { bg: "bg-pink-900/50", text: "text-pink-400" },
+};
+
 export default function TechCarousel({
     title = "Tecnologías",
     items,
@@ -83,48 +95,57 @@ export default function TechCarousel({
     }, [halfWidth, speedPxPerSecond, x]);
 
     return (
-        <section id="tech" className="py-10 bg-black px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto">
-                <div className="flex items-center justify-between gap-4 mb-8">
-                    <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold text-sky-600">
-                        {title}
-                    </h2>
+        <section id="tech" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+                {/* Eyebrow con líneas decorativas */}
+                <div className="flex items-center justify-center gap-4 mb-6">
+                    <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
+                    <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
+                        STACK
+                    </span>
+                    <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
                 </div>
 
+                {/* Título principal */}
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center leading-tight">
+                    Tecnologías & Herramientas
+                </h2>
+
+                {/* Descripción */}
+                <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+                    Herramientas y tecnologías que utilizo en mis proyectos de diseño y desarrollo.
+                </p>
+
+                {/* Carousel Container */}
                 <div className="relative w-full overflow-hidden">
                     <motion.div
                         ref={trackRef}
                         className="flex gap-4 whitespace-nowrap will-change-transform"
                         style={{ x }}
                     >
-                        {loopItems.map((tech, index) => (
-                            <div
-                                key={`${tech.name}-${index}`}
-                                className="shrink-0 w-[170px] sm:w-[190px] md:w-[210px] bg-gray-900 rounded-2xl p-5 shadow-md border border-gray-800 transition duration-300 hover:shadow-lg hover:scale-[1.02]"
-                            >
-                                <div className="h-16 w-full flex items-center justify-center">
-                                    {tech.logoSrc ? (
-                                        <Image
-                                            src={tech.logoSrc}
-                                            alt={tech.name}
-                                            width={56}
-                                            height={56}
-                                            className="object-contain max-h-14 w-auto"
-                                        />
-                                    ) : (
-                                        <div className="h-14 w-14 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-sky-500 font-semibold">
-                                            {tech.name.slice(0, 2).toUpperCase()}
+                        {loopItems.map((tech, index) => {
+                            const colors = techColors[tech.name] || { bg: "bg-gray-800/50", text: "text-gray-300" };
+                            return (
+                                <div
+                                    key={`${tech.name}-${index}`}
+                                    className="shrink-0 w-[200px] sm:w-[220px] md:w-[240px] bg-gray-900/50 border border-gray-800/50 rounded-2xl p-4 transition duration-300 hover:bg-gray-900/70 hover:border-gray-700/50"
+                                >
+                                    <div className="flex items-center gap-3">
+                                        {/* Icon */}
+                                        <div className={`h-12 w-12 rounded-xl ${colors.bg} border border-gray-700/50 flex items-center justify-center flex-shrink-0`}>
+                                            <span className={`${colors.text} font-bold text-sm`}>
+                                                {tech.name.slice(0, 2).toUpperCase()}
+                                            </span>
                                         </div>
-                                    )}
+                                        
+                                        {/* Text */}
+                                        <p className="text-gray-300 text-sm font-medium leading-tight">
+                                            {tech.name}
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div className="mt-4 text-center">
-                                    <p className="text-sm sm:text-base font-semibold text-white">
-                                        {tech.name}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </motion.div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { PiGithubLogoBold, PiLinkedinLogoBold } from 'react-icons/pi';
+import { PiGithubLogoBold, PiLinkedinLogoBold, PiEnvelopeBold, PiLinkBold, PiCalendarBold } from 'react-icons/pi';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
@@ -46,32 +46,45 @@ function Contact() {
 
   return (
     <div>
-      <section id="contact" className="py-8 sm:py-10 bg-gray-900 scroll-mt-24 px-4 sm:px-6">
+      <section id="contact" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className="max-w-6xl mx-auto flex flex-col items-center text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-2 text-sky-500 text-center">
-            Contáctame
+          {/* Eyebrow con líneas decorativas */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
+            <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
+              CONTACTO
+            </span>
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
+          </div>
+
+          {/* Título principal */}
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center leading-tight">
+            Conectemos
           </h2>
 
-          <p className="text-center text-gray-300 text-sm sm:text-base mb-8 sm:mb-10">
-            ¿Tenés una consulta o propuesta? Escribime y te respondo lo antes posible.
+          {/* Descripción */}
+          <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
+            ¿Tenés un proyecto en mente? Escribime y creemos algo increíble juntos.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Formulario */}
-            <form
-              onSubmit={sendEmail}
-              className="lg:col-span-2 bg-gray-800/60 border border-gray-700/60 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 flex flex-col gap-5"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-gray-200 mb-2">
-                    Email
-                  </label>
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+            {/* Message Form */}
+            <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
+                  <PiEnvelopeBold size={16} className="text-cyan-400" />
+                </div>
+                <h3 className="text-white font-semibold text-lg">Enviarme un mensaje</h3>
+              </div>
+
+              <form onSubmit={sendEmail} className="flex flex-col gap-4">
+                <div>
                   <input
                     type="email"
                     name="email"
@@ -79,72 +92,80 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="p-3 rounded-lg bg-gray-900/60 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500/60 focus:border-sky-500 w-full"
+                    className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition"
                   />
                 </div>
 
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-gray-200 mb-2">
-                    Mensaje
-                  </label>
+                <div>
                   <textarea
                     name="message"
-                    placeholder="Contame en qué puedo ayudarte..."
+                    placeholder="Dejame tu mensaje..."
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={6}
-                    className="p-3 rounded-lg bg-gray-900/60 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500/60 focus:border-sky-500 w-full resize-none"
+                    rows={4}
+                    className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition resize-none"
                   />
                 </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                <p className="text-xs sm:text-sm text-gray-400">
-                  Respondo en 1-24hs.
-                </p>
-
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className={`bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg transition w-full sm:w-auto cursor-pointer ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
-                >
-                  {sending ? "Enviando..." : "Enviar"}
-                </button>
-              </div>
-            </form>
-
-            {/* Tarjeta */}
-            <div className="bg-gray-800/60 border border-gray-700/60 backdrop-blur rounded-xl shadow-lg p-6 sm:p-8 flex flex-col justify-between">
-              <div>
-                <div className="flex justify-center mb-4">
-                  <Image
-                    src="/avatars/happy.png"
-                    alt="Happy icon"
-                    width={180}
-                    height={180}
-                    className="rounded-full"
-                  />
+                <div className="flex items-center justify-between mt-10">
+                  <p className="text-gray-400 text-sm">Respondo en 1-24hs.</p>
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-3 px-6 rounded-xl transition w-full sm:w-auto cursor-pointer ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
+                  >
+                    {sending ? "Enviando..." : "Enviar"}
+                  </button>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  También me encontrás en
-                </h3>
-                <p className="text-gray-300 text-sm sm:text-base mb-6">
+              </form>
+            </div>
+
+            {/* Social & Availability */}
+            <div className="space-y-6">
+              {/* Social Media */}
+              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
+                    <PiLinkBold size={16} className="text-cyan-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg">También me encontrás en</h3>
+                </div>
+
+                <p className="text-gray-400 text-sm mb-6">
                   LinkedIn para oportunidades laborales o networking.
                 </p>
+
+                <a
+                  href="https://www.linkedin.com/in/daiana-celeste-lopez/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gray-800/50 border border-white/10 rounded-xl hover:border-cyan-400/50 hover:bg-gray-800/70 transition"
+                >
+                  <div className="w-12 h-12 bg-cyan-400/20 rounded-full flex items-center justify-center shrink-0">
+                    <PiLinkedinLogoBold size={24} className="text-cyan-400" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-white font-medium">Mi LinkedIn</p>
+                    <p className="text-gray-400 text-sm">Daiana Celeste Lopez</p>
+                  </div>
+                </a>
               </div>
 
-              <a
-                href="https://www.linkedin.com/in/daiana-celeste-lopez/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-full inline-flex items-center justify-center gap-3 p-4 bg-gray-900/60 border border-gray-700 rounded-lg hover:border-sky-500/60 hover:bg-gray-900 transition"
-              >
-                <PiLinkedinLogoBold size={28} className="text-white group-hover:text-sky-400 transition" />
-                <span className="font-semibold text-white group-hover:text-sky-400 transition">
-                  Mi LinkedIn
-                </span>
-              </a>
+              {/* Availability */}
+              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
+                    <PiCalendarBold size={16} className="text-cyan-400" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg">Disponible para proyectos</h3>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <p className="text-gray-300">Actualmente open to work · Buenos Aires, Argentina</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
