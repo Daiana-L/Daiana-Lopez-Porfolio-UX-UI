@@ -4,6 +4,8 @@ export type Project = {
   description: string;
   summary: string;
   image: string;
+  mobilePreviewImage?: string;
+  mobilePreviewImages?: string[];
   imagesLarge?: string[];
   youtube: string;
   prototypes?: Array<{
@@ -23,6 +25,11 @@ export const projects: Project[] = [
     summary:
       "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
     image: "/Proyects-UX-UI/S1.png",
+    mobilePreviewImage: "/mobile-preview/HOME-studioconnect.png",
+    mobilePreviewImages: [
+      "/mobile-preview/HOME-studioconnect.png",
+      "/mobile-preview/studioconnet-studio.png",
+    ],
     youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
      prototypes: [
         {
@@ -46,6 +53,12 @@ export const projects: Project[] = [
     summary:
       "SaaS gastronómico tipo marketplace. Diseño UX/UI web + prototipo mobile en Figma.",
     image: "/Proyects-UX-UI/prototypo-mobile-portada.png",
+    mobilePreviewImage: "/mobile-preview/HOME-donmorfi.png",
+    mobilePreviewImages: [
+      "/mobile-preview/HOME-donmorfi.png",
+      "/mobile-preview/prototypo-mobile-donmorfi.png",
+      "/mobile-preview/business-1-donmorfi.png",
+    ],
     imagesLarge: [
     ],
     youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",

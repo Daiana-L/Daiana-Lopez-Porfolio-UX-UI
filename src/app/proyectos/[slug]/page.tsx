@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/navbar";
-import FigmaEmbed from "@/components/FigmaEmbed";
 import { projects } from "@/data/projects";
+import ProjectResponsiveMedia from "@/components/projects/ProjectResponsiveMedia";
 
 export default async function ProjectPage({
     params,
@@ -18,29 +17,10 @@ export default async function ProjectPage({
         notFound();
     }
 
-    const mainImage = project.imagesLarge ?? project.image;
-    const prototypesPlacement = project.prototypesPlacement ?? "afterImages";
-    const prototypesSection = project.prototypes?.length ? (
-        <div className="mt-10">
-            {project.prototypes.map((prototype, index) => (
-                <div key={prototype.src ?? index} className="mt-10">
-                    <FigmaEmbed
-                        title={
-                            prototype.title ??
-                            `${project.name} prototipo ${index + 1}`
-                        }
-                        src={prototype.src}
-                    />
-                </div>
-            ))}
-
-            {project.prototypeNote ? (
-                <p className="text-sm text-gray-400 text-center mb-6 mt-5 max-w-2xl mx-auto">
-                    {project.prototypeNote}
-                </p>
-            ) : null}
-        </div>
-    ) : null;
+    const previewImageSrc = project.mobilePreviewImage ?? project.image;
+    const previewImages = project.mobilePreviewImages?.length
+        ? project.mobilePreviewImages
+        : [previewImageSrc];
 
     return (
         <main className="bg-black text-white font-sans min-h-screen">
@@ -62,25 +42,16 @@ export default async function ProjectPage({
                     {project.description}
                 </p>
 
-                {prototypesPlacement === "beforeImages" ? (
-                    <div className="mb-10">{prototypesSection}</div>
-                ) : null}
-
-                {project.imagesLarge?.map((img, index) => (
-                    <div
-                        key={index}
-                        className="bg-gray-900 rounded-lg overflow-hidden shadow-lg mb-6"
-                    >
-                        <Image
-                            src={img}
-                            alt={`${project.name} ${index + 1}`}
-                            width={1200}
-                            height={700}
-                            className="w-full h-auto object-cover"
-                        />
-                    </div>
-                ))}
-                {prototypesPlacement === "afterImages" ? prototypesSection : null}
+                <ProjectResponsiveMedia
+                    projectName={project.name}
+                    previewImageSrc={previewImageSrc}
+                    previewImages={previewImages}
+                    previewImageAlt={`${project.name} preview`}
+                    images={project.imagesLarge}
+                    prototypes={project.prototypes}
+                    prototypesPlacement={project.prototypesPlacement}
+                    prototypeNote={project.prototypeNote}
+                />
             </section>
         </main>
     );
