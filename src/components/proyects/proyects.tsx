@@ -39,8 +39,10 @@ function Proyects() {
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-sky-400">
               {project.name}
             </h3>
-            <p className="mb-4 text-gray-300 text-sm sm:text-base flex-grow">
-              {project.description}
+            <p
+              className="mb-4 text-gray-300 text-sm sm:text-base flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
+            >
+              {project.summary}
             </p>
             <Link
               href={`/proyectos/${project.slug}`}

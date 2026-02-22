@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/navbar";
+import FigmaEmbed from "@/components/FigmaEmbed";
 import { projects } from "@/data/projects";
 
 export default async function ProjectPage({
@@ -18,6 +19,28 @@ export default async function ProjectPage({
     }
 
     const mainImage = project.imagesLarge ?? project.image;
+    const prototypesPlacement = project.prototypesPlacement ?? "afterImages";
+    const prototypesSection = project.prototypes?.length ? (
+        <div className="mt-10">
+            {project.prototypes.map((prototype, index) => (
+                <div key={prototype.src ?? index} className="mt-10">
+                    <FigmaEmbed
+                        title={
+                            prototype.title ??
+                            `${project.name} prototipo ${index + 1}`
+                        }
+                        src={prototype.src}
+                    />
+                </div>
+            ))}
+
+            {project.prototypeNote ? (
+                <p className="text-sm text-gray-400 text-center mb-6 mt-5 max-w-2xl mx-auto">
+                    {project.prototypeNote}
+                </p>
+            ) : null}
+        </div>
+    ) : null;
 
     return (
         <main className="bg-black text-white font-sans min-h-screen">
@@ -39,6 +62,10 @@ export default async function ProjectPage({
                     {project.description}
                 </p>
 
+                {prototypesPlacement === "beforeImages" ? (
+                    <div className="mb-10">{prototypesSection}</div>
+                ) : null}
+
                 {project.imagesLarge?.map((img, index) => (
                     <div
                         key={index}
@@ -53,39 +80,7 @@ export default async function ProjectPage({
                         />
                     </div>
                 ))}
-                {/* PROTOTIPO INTERACTIVO */}
-                <div className="mt-10">
-                    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
-                        <iframe
-                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=127-3097&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=59%3A41&starting-point-node-id=127%3A3097"
-                             className="absolute top-0 left-0 w-full h-full border-0"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-                   <div className="mt-10">
-                    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
-                        <iframe
-                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=1-168&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A168"
-                            className="absolute top-0 left-0 w-full h-full border-0"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-                  <div className="mt-10">
-                    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
-                        <iframe
-                            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=127-4504&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=127%3A4503&starting-point-node-id=127%3A4504"
-                            className="absolute top-0 left-0 w-full h-full border-0"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-                <p className="text-sm text-gray-400 text-center mb-6 mt-5 max-w-2xl mx-auto">
-                    Nota: Esta es una muestra representativa del diseño. El
-                    prototipo completo no se incluye por motivos de
-                    confidencialidad.
-                </p>
+                {prototypesPlacement === "afterImages" ? prototypesSection : null}
             </section>
         </main>
     );

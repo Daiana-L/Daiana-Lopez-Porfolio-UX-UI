@@ -2,10 +2,16 @@ export type Project = {
   slug: string;
   name: string;
   description: string;
+  summary: string;
   image: string;
   imagesLarge?: string[];
   youtube: string;
-  figmaEmbed?: string;
+  prototypes?: Array<{
+    src: string;
+    title?: string;
+  }>;
+  prototypesPlacement?: "beforeImages" | "afterImages";
+  prototypeNote?: string;
 };
 
 export const projects: Project[] = [
@@ -14,29 +20,59 @@ export const projects: Project[] = [
     name: "StudioConnect",
     description:
       "Plataforma web para conectar músicos con estudios de grabación. Rol como Frontend Developer & UX/UI Designer: diseño de interfaces en Figma, formularios de autenticación/registro, integración de geolocalización, desarrollo de páginas clave (reservas, dashboard, perfiles) y manejo de estado global con Zustand.",
-    image: "/Proyect-portadas/StudioConenct-portada.png",
-    imagesLarge: [
-      "/Proyects-UX-UI/Studioconnect-Proyect.png",
-    ],
+    summary:
+      "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
+    image: "/Proyects-UX-UI/S1.png",
     youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
+     prototypes: [
+        {
+        title: "Prototipo web",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=14-25&t=4VzV52HoYFagGyyt-0&scaling=scale-down-width&content-scaling=fixed&page-id=14%3A24&starting-point-node-id=14%3A25",
+      },
+      {
+        title: "Prototipo web",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=1-4334&t=TvM42Bt0CnMfttio-0&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A4333&starting-point-node-id=1%3A4334",
+      },
+   ],
+    prototypesPlacement: "beforeImages",
+    imagesLarge: [
+    ],
   },
     {
     slug: "DonMorfi",
     name: "DonMorfi",
     description:
       "DonMorfi — Pasantía | UX/UI Designer SaaS de e-commerce gastronómico tipo marketplace. Diseñé la experiencia web y el prototipo mobile en Figma, trabajando con un Design System basado en Atomic Design para asegurar consistencia, escalabilidad y un handoff eficiente a desarrollo. Por acuerdos de confidencialidad, se muestran únicamente vistas representativas del proyecto",
+    summary:
+      "SaaS gastronómico tipo marketplace. Diseño UX/UI web + prototipo mobile en Figma.",
     image: "/Proyects-UX-UI/prototypo-mobile-portada.png",
     imagesLarge: [
     ],
     youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
-      figmaEmbed:
-    "https://embed.figma.com/design/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=0-1&embed-host=share",
+    prototypes: [
+      {
+        title: "Prototipo web",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=127-3097&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=59%3A41&starting-point-node-id=127%3A3097",
+      },
+      {
+        title: "Prototipo mobile",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=1-168&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A168",
+      },
+      {
+        title: "Flow adicional",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/zM0KQFssP27RVr1M5qzrPG/DonMorfi-web?node-id=127-4504&t=HxDyV3D4QiGbrlQ9-0&scaling=scale-down-width&content-scaling=fixed&page-id=127%3A4503&starting-point-node-id=127%3A4504",
+      },
+    ],
+    prototypeNote:
+      "Nota: Esta es una muestra representativa del diseño. El prototipo completo no se incluye por motivos de confidencialidad.",
   },
   {
     slug: "TaskApp",
     name: "TaskApp",
     description:
       "Aplicación nativa para la gestión de tareas colaborativas. Incluye investigación UX (desk research, entrevistas, benchmarking, mapas de afinidad y empatía, proto-personas, cardsorting), definición de MVP, user flows y diseño UI con Atomic Design y prototipos interactivos",
+    summary:
+      "App nativa para gestión de tareas colaborativas con investigación UX y prototipos interactivos.",
     image: "/Proyect-portadas/TaskApp-portada.png",
     imagesLarge: [
       "/Proyects-UX-UI/Task-App.png",

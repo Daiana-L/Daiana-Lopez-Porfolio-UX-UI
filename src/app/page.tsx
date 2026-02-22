@@ -1,8 +1,8 @@
 "use client";
-import Tecnologis from "@/components/tecnologis/tecnologis";
 import Navbar from "@/components/navbar/navbar";
 import Hero from "@/components/hero/hero";
 import Proyects from "@/components/proyects/proyects";
+import TechCarousel from "@/components/home/TechCarousel";
 import Contact from "@/components/contact/contact";
 import FloatingChat from "@/components/floatingChat/FloatingChat";
 
@@ -17,6 +17,9 @@ export default function Home() {
 
       {/* Proyectos */}
           <Proyects/>
+
+      {/* Tecnologías */}
+          <TechCarousel />
 
       {/* Contacto */}
           <Contact/>
