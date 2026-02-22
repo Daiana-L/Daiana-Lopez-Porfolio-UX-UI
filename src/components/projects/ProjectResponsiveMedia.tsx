@@ -88,7 +88,7 @@ export default function ProjectResponsiveMedia({
                             key={src ?? index}
                             className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
                         >
-                            <div className="relative w-full aspect-[16/10] bg-black">
+                            <div className="relative w-full bg-black h-[52vh] min-h-[320px] max-h-[520px]">
                                 <Image
                                     src={src}
                                     alt={previewAlt}
