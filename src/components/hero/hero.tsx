@@ -40,7 +40,7 @@ function Hero() {
         </span>
       </div>
 
-      <h1 className="font-bold mt-1 mb-3 text-slate-50" style={{ fontSize: '64px', fontWeight: '700' }}>
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mt-1 mb-3 text-slate-50">
         Daiana Lopez, UX/UI Designer
       </h1>
 
