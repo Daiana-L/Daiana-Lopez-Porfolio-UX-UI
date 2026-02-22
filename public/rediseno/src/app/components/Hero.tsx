@@ -1,6 +1,8 @@
 import { MapPin, Download, ArrowRight } from "lucide-react";
 import profileImg from "figma:asset/eb13ddd4da485c79ff8c90da75121500700b1852.png";
 
+const profileImgSrc = typeof profileImg === "string" ? profileImg : profileImg.src;
+
 export function Hero() {
   return (
     <section
@@ -301,7 +303,7 @@ export function Hero() {
                 className="w-40 h-40 md:w-64 md:h-64"
               >
                 <img
-                  src={profileImg}
+                  src={profileImgSrc}
                   alt="Daiana Celeste Lopez"
                   style={{
                     width: "100%",
