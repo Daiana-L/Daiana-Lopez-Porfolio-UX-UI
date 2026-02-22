@@ -88,16 +88,13 @@ export default function ProjectResponsiveMedia({
                             key={src ?? index}
                             className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
                         >
-                            <div className="relative w-full bg-black h-[52vh] min-h-[320px] max-h-[520px]">
-                                <Image
-                                    src={src}
-                                    alt={previewAlt}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 0px"
-                                    className="object-contain"
-                                    priority={index === 0}
-                                />
-                            </div>
+                            <img
+                                src={src}
+                                alt={`${previewAlt} ${index + 1}`}
+                                className="block w-full h-auto bg-black"
+                                loading={index === 0 ? "eager" : "lazy"}
+                                decoding="async"
+                            />
                         </div>
                     ))}
                 </div>
