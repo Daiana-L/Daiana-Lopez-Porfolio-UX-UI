@@ -26,7 +26,7 @@ export default async function ProjectPage({
         <main className="bg-black text-white font-sans min-h-screen">
             <Navbar />
 
-            <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-30 pb-12">
+            <section className="max-w-3xl mx-auto px-5 sm:px-6 md:pt-30 pt-20 pb-12">
                 <Link
                     href="/#projects"
                     className="text-sky-500 hover:underline text-sm sm:text-base"

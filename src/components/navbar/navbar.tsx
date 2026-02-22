@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
+import Link from "next/link";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +14,12 @@ function Navbar() {
     <nav className="fixed w-full bg-gray-900 md:p-6 shadow z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo / Nombre */}
-        <span className="font-bold md:text-md text-white">
+        <Link
+          href="/"
+          className="font-bold md:text-md text-white hover:text-sky-400 transition"
+        >
           Daiana Celeste Lopez
-        </span>
+        </Link>
 
         {/* Menu Desktop */}
         <ul className="hidden md:flex space-x-6 text-white font-medium">
