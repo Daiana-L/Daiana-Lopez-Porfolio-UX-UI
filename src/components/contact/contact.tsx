@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { PiGithubLogoBold, PiLinkedinLogoBold, PiEnvelopeBold, PiLinkBold, PiCalendarBold } from 'react-icons/pi';
+import { PiGithubLogoBold, PiLinkedinLogoBold, PiEnvelopeBold, PiLinkBold, PiCalendarBold, PiPaperPlaneRightBold } from 'react-icons/pi';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
@@ -48,7 +48,7 @@ function Contact() {
     <div>
       <section id="contact" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
         <motion.div
-          className="max-w-6xl mx-auto flex flex-col items-center text-center"
+          className="max-w-3xl mx-auto flex flex-col items-center text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -75,15 +75,15 @@ function Contact() {
           {/* Two Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
             {/* Message Form */}
-            <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
+            <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                   <PiEnvelopeBold size={16} className="text-cyan-400" />
                 </div>
                 <h3 className="text-white font-semibold text-lg">Enviarme un mensaje</h3>
               </div>
 
-              <form onSubmit={sendEmail} className="flex flex-col gap-4">
+              <form onSubmit={sendEmail} className="flex flex-col gap-3">
                 <div>
                   <input
                     type="email"
@@ -92,7 +92,7 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition"
+                    className="w-full p-2.5 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition text-sm"
                   />
                 </div>
 
@@ -103,36 +103,41 @@ function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
-                    className="w-full p-3 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition resize-none"
+                    rows={3}
+                    className="w-full p-2.5 rounded-lg bg-gray-800/50 text-white border border-transparent focus:border-cyan-400/50 focus:bg-gray-800/70 transition resize-none text-sm"
                   />
                 </div>
 
-                <div className="flex items-center justify-between mt-10">
-                  <p className="text-gray-400 text-sm">Respondo en 1-24hs.</p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-12">
+                  <p className="text-gray-400 text-xs">Respondo en 1-24hs.</p>
                   <button
                     type="submit"
                     disabled={sending}
-                    className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-3 px-6 rounded-xl transition w-full sm:w-auto cursor-pointer ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-2.5 px-5 rounded-xl transition w-full sm:w-auto cursor-pointer flex items-center justify-center gap-2 text-sm ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    {sending ? "Enviando..." : "Enviar"}
+                    {sending ? "Enviando..." : (
+                      <>
+                        Enviar
+                        <PiPaperPlaneRightBold size={16} />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
             </div>
 
             {/* Social & Availability */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Social Media */}
-              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
-                <div className="flex items-center gap-3 mb-6">
+              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                     <PiLinkBold size={16} className="text-cyan-400" />
                   </div>
                   <h3 className="text-white font-semibold text-lg">También me encontrás en</h3>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-6">
+                <p className="text-gray-400 text-xs mb-4">
                   LinkedIn para oportunidades laborales o networking.
                 </p>
 
@@ -140,21 +145,21 @@ function Contact() {
                   href="https://www.linkedin.com/in/daiana-celeste-lopez/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-800/50 border border-white/10 rounded-xl hover:border-cyan-400/50 hover:bg-gray-800/70 transition"
+                  className="flex items-center gap-3 p-3 bg-gray-800/50 border border-white/10 rounded-xl hover:border-cyan-400/50 hover:bg-gray-800/70 transition"
                 >
-                  <div className="w-12 h-12 bg-cyan-400/20 rounded-full flex items-center justify-center shrink-0">
-                    <PiLinkedinLogoBold size={24} className="text-cyan-400" />
+                  <div className="w-10 h-10 bg-cyan-400/20 rounded-full flex items-center justify-center shrink-0">
+                    <PiLinkedinLogoBold size={20} className="text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-white font-medium">Mi LinkedIn</p>
-                    <p className="text-gray-400 text-sm">Daiana Celeste Lopez</p>
+                    <p className="text-white font-medium text-sm">Mi LinkedIn</p>
+                    <p className="text-gray-400 text-xs">Daiana Celeste Lopez</p>
                   </div>
                 </a>
               </div>
 
               {/* Availability */}
-              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-8">
-                <div className="flex items-center gap-3 mb-6">
+              <div className="bg-gray-900/50 border border-white/10 backdrop-blur rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                     <PiCalendarBold size={16} className="text-cyan-400" />
                   </div>
@@ -162,8 +167,8 @@ function Contact() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <p className="text-gray-300">Actualmente open to work · Buenos Aires, Argentina</p>
+                  <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse flex-shrink-0 mb-4 ml-3"></div>
+                  <p className="text-gray-300 text-sm">Actualmente open to work · Buenos Aires, Argentina</p>
                 </div>
               </div>
             </div>

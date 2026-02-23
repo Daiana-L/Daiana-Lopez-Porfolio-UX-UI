@@ -9,7 +9,7 @@ function Proyects() {
     <div>
      <section id="projects" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
   <motion.div
-    className="max-w-6xl mx-auto flex flex-col items-center text-center"
+    className="max-w-3xl mx-auto flex flex-col items-center text-center"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
@@ -44,7 +44,7 @@ function Proyects() {
           transition={{ duration: 0.5, delay: index * 0.2 }}
         >
           {/* Imagen con overlay premium */}
-          <div className="relative h-48 sm:h-56 md:h-54 overflow-hidden">
+          <div className="relative h-32 sm:h-40 md:h-36 overflow-hidden">
             <Image
               src={project.image}
               alt={project.name}
@@ -68,34 +68,34 @@ function Proyects() {
           </div>
           
           {/* Contenido con mejor jerarquía */}
-          <div className="p-6 text-left flex flex-col flex-grow">
+          <div className="p-4 text-left flex flex-col flex-grow">
             {/* Título premium */}
-            <div className="mb-4">
-              <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-white mb-2 leading-tight">
+            <div className="mb-2">
+              <h3 className="text-lg sm:text-xl md:text-xl font-bold text-white mb-1.5 leading-tight">
                 {project.name}
               </h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full" />
+              <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full" />
             </div>
             
             {/* Descripción */}
             <p
-              className="mb-5 text-gray-300 text-sm sm:text-base leading-relaxed flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
+              className="mb-3 text-gray-300 text-xs leading-relaxed flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
             >
               {project.summary}
             </p>
             
             {/* Chips de tecnologías */}
-            <div className="mb-5 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-1.5">
               {project.technologies.slice(0, 3).map((tech, techIndex) => (
                 <span
                   key={techIndex}
-                  className="inline-flex items-center px-3 py-1.5 bg-gray-800/50 hover:bg-gray-800/70 text-gray-300 text-xs font-medium rounded-full transition-colors duration-200 border border-gray-700/50"
+                  className="inline-flex items-center px-2 py-1 bg-gray-800/50 hover:bg-gray-800/70 text-gray-300 text-xs font-medium rounded-full transition-colors duration-200 border border-gray-700/50"
                 >
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 3 && (
-                <span className="inline-flex items-center px-3 py-1.5 bg-gray-800/50 text-gray-400 text-xs font-medium rounded-full border border-gray-700/50">
+                <span className="inline-flex items-center px-2 py-1 bg-gray-800/50 text-gray-400 text-xs font-medium rounded-full border border-gray-700/50">
                   +{project.technologies.length - 3}
                 </span>
               )}
@@ -104,10 +104,10 @@ function Proyects() {
             {/* Botón mejorado con icono */}
             <Link
               href={`/proyectos/${project.slug}`}
-              className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 text-sm sm:text-base w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-2 px-5 rounded-xl transition-all duration-300 text-xs sm:text-sm w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
             >
               <span>Ver proyecto</span>
-              <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>

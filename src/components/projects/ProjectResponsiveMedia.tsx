@@ -32,17 +32,19 @@ export default function ProjectResponsiveMedia({
 }: ProjectResponsiveMediaProps) {
     const hasPrototypes = Boolean(prototypes?.length);
     const hasImages = Boolean(images?.length);
+    const hasPreviewImages = Boolean(previewImages?.length);
 
     const previewAlt = previewImageAlt ?? `${projectName} preview`;
     const previewList = previewImages?.length ? previewImages : [previewImageSrc];
 
     const prototypesBlock = hasPrototypes ? (
-        <div className="space-y-10">
+        <div className="space-y-10 max-w-2xl mx-auto">
             {prototypes!.map((prototype, index) => (
                 <FigmaEmbed
                     key={prototype.src ?? index}
                     title={prototype.title ?? `${projectName} prototipo ${index + 1}`}
                     src={prototype.src}
+                    maxWidth="max-w-2xl"
                 />
             ))}
 
@@ -67,6 +69,26 @@ export default function ProjectResponsiveMedia({
                         width={1200}
                         height={700}
                         className="w-full h-auto object-cover"
+                    />
+                </div>
+            ))}
+        </div>
+    ) : null;
+
+    // Usar las mismas imágenes de mobile-preview para web también
+    const webImagesBlock = hasPreviewImages ? (
+        <div className="space-y-6 max-w-3xl mx-auto">
+            {previewList.map((src, index) => (
+                <div
+                    key={src ?? index}
+                    className="bg-gray-900 rounded-lg overflow-hidden shadow-lg"
+                >
+                    <img
+                        src={src}
+                        alt={`${projectName} ${index + 1}`}
+                        className="w-full h-auto object-cover"
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
                     />
                 </div>
             ))}
@@ -101,22 +123,13 @@ export default function ProjectResponsiveMedia({
             </div>
 
             <div className="md:hidden space-y-10">
-                {hasPrototypes ? prototypesBlock : null}
                 {hasImages ? imagesBlock : null}
+                {hasPrototypes ? prototypesBlock : null}
             </div>
 
-            <div className="hidden md:block">
-                {prototypesPlacement === "beforeImages" ? (
-                    <div className="space-y-10">
-                        {hasPrototypes ? prototypesBlock : null}
-                        {hasImages ? imagesBlock : null}
-                    </div>
-                ) : (
-                    <div className="space-y-10">
-                        {hasImages ? imagesBlock : null}
-                        {hasPrototypes ? prototypesBlock : null}
-                    </div>
-                )}
+            <div className="hidden md:block space-y-10">
+                {hasPreviewImages ? webImagesBlock : null}
+                {hasPrototypes ? prototypesBlock : null}
             </div>
         </div>
     );

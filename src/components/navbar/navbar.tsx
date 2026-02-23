@@ -12,11 +12,11 @@ function Navbar() {
 
   return (
     <nav className="fixed w-full bg-gray-900/80 backdrop-blur-md shadow-lg z-50">
-      <div className="flex justify-between items-center w-full px-6 py-4 max-w-6xl mx-auto">
+      <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
         {/* Logo con foto + nombre */}
         <Link
           href="/"
-          className="flex items-center gap-6 font-bold md:text-md text-white hover:text-sky-400 transition"
+          className="flex items-center gap-6 font-bold md:text-xs text-white hover:text-sky-400 transition"
         >
           <img
             src="/foto-logo.png"
@@ -27,24 +27,29 @@ function Navbar() {
         </Link>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex space-x-4 font-medium">
+        <ul className="hidden md:flex space-x-3 font-medium">
           <li>
-            <a href="/#about" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#about" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="/#technologies" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#technologies" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Tecnologías
             </a>
           </li>
           <li>
-            <a href="/#projects" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#services" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="/#projects" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="/#contact" className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#contact" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Contacto
             </a>
           </li>
@@ -58,24 +63,29 @@ function Navbar() {
 
       {/* Menu Mobile */}
       {isOpen && (
-        <ul className="md:hidden bg-gray-900/80 backdrop-blur-md flex flex-col items-center space-y-4 py-4">
+        <ul className="md:hidden bg-gray-900/80 backdrop-blur-md flex flex-col items-center space-y-3 py-4">
           <li>
-            <a href="/#about" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#about" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
               Sobre mí
             </a>
           </li>
           <li>
-            <a href="/#technologies" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#technologies" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Tecnologías
             </a>
           </li>
           <li>
-            <a href="/#projects" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#services" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="/#projects" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Proyectos
             </a>
           </li>
           <li>
-            <a href="/#contact" onClick={toggleMenu} className="font-medium text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#contact" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               Contacto
             </a>
           </li>

@@ -44,7 +44,11 @@ export const projects: Project[] = [
       },
     ],
     prototypesPlacement: "beforeImages",
-    imagesLarge: [],
+    imagesLarge: [
+      "/Proyects-UX-UI/S1.png",
+      "/Proyects-UX-UI/studioconnect-dashboard.png",
+      "/Proyects-UX-UI/studioconnect-studio-detail.png",
+    ],
   },
   {
     slug: "DonMorfi",
@@ -61,7 +65,11 @@ export const projects: Project[] = [
       "/mobile-preview/prototypo-mobile-donmorfi.png",
       "/mobile-preview/business-1-donmorfi.png",
     ],
-    imagesLarge: [],
+    imagesLarge: [
+      "/Proyects-UX-UI/prototypo-mobile-portada.png",
+      "/mobile-preview/HOME-donmorfi.png",
+      "/mobile-preview/prototypo-mobile-donmorfi.png",
+    ],
     youtube: "https://www.youtube.com/watch?v=XJMVlnWBzQQ",
     prototypes: [
       {

@@ -32,15 +32,15 @@ function Hero() {
     </div>
 
     {/* Info */}
-    <div className="text-center md:text-left max-w-md sm:max-w-xl md:max-w-2xl mx-auto flex flex-col items-center md:items-start">
+    <div className="text-center md:text-left max-w-md sm:max-w-xl md:max-w-xl mx-auto flex flex-col items-center md:items-start">
       <div className="flex flex-col items-center justify-center gap-2 mb-2 md:flex-row md:items-center md:justify-start md:gap-3">
         <span className="w-10 h-0.5 bg-sky-400 rounded md:w-8" />
-        <span className="text-base sm:text-lg block text-sky-400 font-semibold tracking-[0.12em] uppercase">
+        <span className="text-base sm:text-sm block text-sky-400 font-semibold tracking-[0.12em] uppercase">
           Bienvenidos a mi porfolio profesional!
         </span>
       </div>
 
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mt-1 mb-3 text-slate-50">
+        <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold mt-1 mb-3 text-slate-50">
         Daiana Lopez, UX/UI Designer
       </h1>
 

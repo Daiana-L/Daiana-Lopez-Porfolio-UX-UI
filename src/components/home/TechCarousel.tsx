@@ -96,7 +96,7 @@ export default function TechCarousel({
 
     return (
         <section id="tech" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+            <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
                 {/* Eyebrow con líneas decorativas */}
                 <div className="flex items-center justify-center gap-4 mb-6">
                     <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
@@ -128,12 +128,12 @@ export default function TechCarousel({
                             return (
                                 <div
                                     key={`${tech.name}-${index}`}
-                                    className="shrink-0 w-[200px] sm:w-[220px] md:w-[240px] bg-gray-900/50 border border-gray-800/50 rounded-2xl p-4 transition duration-300 hover:bg-gray-900/70 hover:border-gray-700/50"
+                                    className="shrink-0 w-[180px] sm:w-[200px] md:w-[220px] bg-gray-900/50 border border-gray-800/50 rounded-2xl p-3 transition duration-300 hover:bg-gray-900/70 hover:border-gray-700/50"
                                 >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-2.5">
                                         {/* Icon */}
-                                        <div className={`h-12 w-12 rounded-xl ${colors.bg} border border-gray-700/50 flex items-center justify-center flex-shrink-0`}>
-                                            <span className={`${colors.text} font-bold text-sm`}>
+                                        <div className={`h-10 w-10 rounded-xl ${colors.bg} border border-gray-700/50 flex items-center justify-center flex-shrink-0`}>
+                                            <span className={`${colors.text} font-bold text-xs`}>
                                                 {tech.name.slice(0, 2).toUpperCase()}
                                             </span>
                                         </div>
