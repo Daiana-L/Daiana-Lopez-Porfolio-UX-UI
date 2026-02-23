@@ -39,8 +39,9 @@ export default function TechCarousel({
             { name: "JavaScript" },
             { name: "Next.js" },
             { name: "Tailwind CSS" },
-            { name: "Adobe (Photoshop)" },
-            { name: "Webflow" },
+            { name: "Figma make" },
+            { name: "Wireframe" },
+            { name: "Adobe" },
         ],
         []
     );
