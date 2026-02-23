@@ -29,8 +29,9 @@ export const projects: Project[] = [
     technologies: ["UX Research", "Figma", "React", "Next.js", "Tailwind CSS", "Zustand"],
     mobilePreviewImage: "/mobile-preview/HOME-studioconnect.png",
     mobilePreviewImages: [
-      "/mobile-preview/HOME-studioconnect.png",
       "/mobile-preview/studioconnet-studio.png",
+      "/mobile-preview/HOME-studioconnect.png",
+      
     ],
     youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
     prototypes: [
@@ -61,8 +62,8 @@ export const projects: Project[] = [
     image: "/Proyects-UX-UI/prototypo-mobile-portada.png",
     mobilePreviewImage: "/mobile-preview/HOME-donmorfi.png",
     mobilePreviewImages: [
-      "/mobile-preview/HOME-donmorfi.png",
       "/mobile-preview/prototypo-mobile-donmorfi.png",
+      "/mobile-preview/HOME-donmorfi.png",
       "/mobile-preview/business-1-donmorfi.png",
     ],
     imagesLarge: [
@@ -97,8 +98,8 @@ export const projects: Project[] = [
     summary:
       "App nativa para gestión de tareas colaborativas con investigación UX y prototipos interactivos.",
     image: "/Proyect-portadas/TaskApp-portada.png",
-    imagesLarge: [
-      "/Proyects-UX-UI/Task-App.png",
+       mobilePreviewImages: [
+      "/Proyects-UX-UI/Task-App.png"
     ],
     youtube: "https://www.youtube.com/watch?v=6ZB_oYsGi3s",
   },
