@@ -14,14 +14,14 @@ function Hero() {
              min-h-[60vh] md:min-h-[40vh] mb-5"
 >
   <motion.div
-    className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-10
+    className="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-10
                transform md:scale-[0.75] md:origin-center"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
   >
     {/* Foto */}
-    <div className="md:w-1/3 flex justify-center mb-5">
+    <div className="md:w-1/3 flex justify-center mt-4">
       <Image
         src="/foto-profesional2.jpg"
         alt="Daiana Celeste Lopez"
@@ -33,9 +33,9 @@ function Hero() {
 
     {/* Info */}
     <div className="text-center md:text-left max-w-md sm:max-w-xl md:max-w-xl mx-auto flex flex-col items-center md:items-start">
-      <div className="flex flex-col items-center justify-center gap-2 mb-2 md:flex-row md:items-center md:justify-start md:gap-3">
+      <div className="flex flex-col items-center justify-center gap-4 mb-2 md:flex-row md:items-center md:justify-start md:gap-3">
         <span className="w-10 h-0.5 bg-sky-400 rounded md:w-8" />
-        <span className="text-base sm:text-sm block text-sky-400 font-semibold tracking-[0.12em] uppercase">
+        <span className="text-xs sm:text-sm block text-sky-400 font-semibold tracking-[0.12em] uppercase">
           Bienvenidos a mi porfolio profesional!
         </span>
       </div>
