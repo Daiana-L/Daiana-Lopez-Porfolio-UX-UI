@@ -24,7 +24,7 @@ function Proyects() {
         </div>
 
         {/* Título principal */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center leading-tight">
+        <h2 className="text-xl sm:text-2xl md:text-2xl font-bold mb-6 text-white text-center leading-tight">
           Proyectos UX/UI Designer
         </h2>
 
@@ -71,7 +71,7 @@ function Proyects() {
           <div className="p-4 text-left flex flex-col flex-grow">
             {/* Título premium */}
             <div className="mb-2">
-              <h3 className="text-lg sm:text-xl md:text-xl font-bold text-white mb-1.5 leading-tight">
+              <h3 className="text-lg sm:text-xl md:text-md font-bold text-white mb-1.5 leading-tight">
                 {project.name}
               </h3>
               <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full" />

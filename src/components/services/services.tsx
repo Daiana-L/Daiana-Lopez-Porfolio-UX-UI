@@ -61,7 +61,7 @@ export default function Services() {
                 </div>
 
                 {/* Título principal */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-white text-center leading-tight">
+                <h2 className="text-xl sm:text-2xl md:text-2xl font-bold mb-6 text-white text-center leading-tight">
                     Mis Servicios
                 </h2>
 

@@ -11,17 +11,17 @@ function Hero() {
   id="about"
   className="w-full flex items-center justify-center px-4 sm:px-6
              pt-20 sm:pt-20 md:pt-20
-             min-h-[60vh] md:min-h-[40vh]"
+             min-h-[60vh] md:min-h-[40vh] mb-5"
 >
   <motion.div
-    className="flex flex-col md:flex-row items-center gap-8 md:gap-10
+    className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-10
                transform md:scale-[0.75] md:origin-center"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
   >
     {/* Foto */}
-    <div className="md:w-1/3 flex justify-center">
+    <div className="md:w-1/3 flex justify-center mb-5">
       <Image
         src="/foto-profesional2.jpg"
         alt="Daiana Celeste Lopez"
