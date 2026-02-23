@@ -108,12 +108,12 @@ function Contact() {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-12">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 md:mt-10">
                   <p className="text-gray-400 text-xs">Respondo en 1-24hs.</p>
                   <button
                     type="submit"
                     disabled={sending}
-                    className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-2.5 px-5 rounded-xl transition w-full sm:w-auto cursor-pointer flex items-center justify-center gap-2 text-sm ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-3 px-6 rounded-xl transition w-full sm:w-auto cursor-pointer flex items-center justify-center gap-2 text-sm ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
                     {sending ? "Enviando..." : (
                       <>
