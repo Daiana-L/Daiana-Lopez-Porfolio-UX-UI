@@ -42,7 +42,7 @@ export default async function ProjectPage({
         <main className="bg-black text-white font-sans min-h-screen">
             <Navbar />
 
-            <div className="max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-25 pb-16">
+            <div className="max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-22 pb-16">
                 {/* Back Navigation */}
                 <Link
                     href="/#projects"
