@@ -146,6 +146,130 @@ export default async function ProjectPage({
                     </p>
                 </div>
 
+                {/* Strategic Narrative Sections */}
+                {project.problema && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-orange-400 rounded-full"></span>
+                            Problemática
+                        </h2>
+                        <p className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl">
+                            {project.problema}
+                        </p>
+                    </div>
+                )}
+
+                {project.insights && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-yellow-400 rounded-full"></span>
+                            Insights
+                        </h2>
+                        <div className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl whitespace-pre-line">
+                            {project.insights}
+                        </div>
+                    </div>
+                )}
+
+                {project.investigacion && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-purple-400 rounded-full"></span>
+                            Investigación
+                        </h2>
+                        <p className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl">
+                            {project.investigacion}
+                        </p>
+                    </div>
+                )}
+
+                {project.insightsClave && project.insightsClave.length > 0 && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-yellow-400 rounded-full"></span>
+                            Insights Clave
+                        </h2>
+                        <ul className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl space-y-1">
+                            {project.insightsClave.map((insight, index) => (
+                                <li key={index} className="flex items-start gap-2">
+                                    <span className="text-yellow-400 mt-1">•</span>
+                                    <span>{insight}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {project.decisionesEstrategicas && project.decisionesEstrategicas.length > 0 && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-green-400 rounded-full"></span>
+                            Decisiones Estratégicas
+                        </h2>
+                        <ul className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl space-y-1">
+                            {project.decisionesEstrategicas.map((decision, index) => (
+                                <li key={index} className="flex items-start gap-2">
+                                    <span className="text-green-400 mt-1">•</span>
+                                    <span>{decision}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {project.decisionesDeDiseño && project.decisionesDeDiseño.length > 0 && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-green-400 rounded-full"></span>
+                            Decisiones de Diseño
+                        </h2>
+                        <ul className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl space-y-1">
+                            {project.decisionesDeDiseño.map((decision, index) => (
+                                <li key={index} className="flex items-start gap-2">
+                                    <span className="text-green-400 mt-1">•</span>
+                                    <span>{decision}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                {project.impacto && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-blue-400 rounded-full"></span>
+                            Impacto
+                        </h2>
+                        <p className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl">
+                            {project.impacto}
+                        </p>
+                    </div>
+                )}
+
+                {project.resultado && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-blue-400 rounded-full"></span>
+                            Resultado
+                        </h2>
+                        <p className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl">
+                            {project.resultado}
+                        </p>
+                    </div>
+                )}
+
+                {project.aprendizajes && (
+                    <div className="mb-2">
+                        <h2 className="text-sm sm:text-base font-bold text-white mb-0.5 flex items-center gap-1">
+                            <span className="w-0.5 h-3 bg-pink-400 rounded-full"></span>
+                            Aprendizajes
+                        </h2>
+                        <p className="text-gray-300 text-xs sm:text-xs leading-relaxed max-w-4xl">
+                            {project.aprendizajes}
+                        </p>
+                    </div>
+                )}
+
                 {/* Feature Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mb-2">
                     {/* Marketplace Web Card */}

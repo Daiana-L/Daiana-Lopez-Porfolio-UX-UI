@@ -97,33 +97,8 @@ export default function ProjectResponsiveMedia({
 
     return (
         <div className="space-y-10">
-            <div
-                className={
-                    showPreviewOnDesktop
-                        ? ""
-                        : "md:hidden"
-                }
-            >
-                <div className="space-y-6">
-                    {previewList.map((src, index) => (
-                        <div
-                            key={src ?? index}
-                            className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
-                        >
-                            <img
-                                src={src}
-                                alt={`${previewAlt} ${index + 1}`}
-                                className="block w-full h-auto bg-black"
-                                loading={index === 0 ? "eager" : "lazy"}
-                                decoding="async"
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-
             <div className="md:hidden space-y-10">
-                {hasImages ? imagesBlock : null}
+                {hasPreviewImages ? webImagesBlock : null}
                 {hasPrototypes ? prototypesBlock : null}
             </div>
 

@@ -15,6 +15,16 @@ export type Project = {
   }>;
   prototypesPlacement?: "beforeImages" | "afterImages";
   prototypeNote?: string;
+  contexto?: string;
+  problema?: string;
+  insights?: string;
+  decisionesEstrategicas?: string[];
+  impacto?: string;
+  resultado?: string;
+  investigacion?: string;
+  insightsClave?: string[];
+  decisionesDeDiseño?: string[];
+  aprendizajes?: string;
 };
 
 export const projects: Project[] = [
@@ -50,6 +60,15 @@ export const projects: Project[] = [
       "/Proyects-UX-UI/studioconnect-dashboard.png",
       "/Proyects-UX-UI/studioconnect-studio-detail.png",
     ],
+    contexto: undefined,
+    problema: "Los usuarios necesitaban un proceso de reserva claro y confiable, pero la estructura inicial carecía de una arquitectura bien definida y jerarquía visual consistente.",
+    insights: "La información clave no estaba priorizada.\nEl flujo de reserva generaba dudas en pasos intermedios.\nLa navegación no guiaba correctamente la acción principal.",
+    decisionesEstrategicas: [
+      "Rediseñé el flujo de autenticación y reserva para hacerlo más directo.",
+      "Mejoré la jerarquía visual destacando acciones primarias.",
+      "Implementé consistencia en componentes para reforzar identidad y claridad."
+    ],
+    resultado: "El proyecto evolucionó hacia una experiencia más estructurada y clara, enfocada en reducir fricción y facilitar la conversión."
   },
   {
     slug: "DonMorfi",
@@ -88,6 +107,16 @@ export const projects: Project[] = [
     ],
     prototypeNote:
       "Nota: Esta es una muestra representativa del diseño. El prototipo completo no se incluye por motivos de confidencialidad.",
+    contexto: undefined,
+    problema: "Los usuarios necesitaban una experiencia clara y eficiente tanto para realizar pedidos como para gestionar productos, pero los flujos presentaban fricción y falta de jerarquía visual.",
+    decisionesEstrategicas: [
+      "Reorganicé la jerarquía visual priorizando acciones principales.",
+      "Simplifiqué los flujos de pedido reduciendo pasos innecesarios.",
+      "Diseñé un sistema de componentes reutilizables basado en Atomic Design.",
+      "Mejoré la claridad del dashboard administrativo para facilitar la gestión diaria."
+    ],
+    impacto: "El rediseño permitió una navegación más intuitiva, mayor claridad en la gestión de productos y una experiencia más fluida tanto para clientes como para administradores.",
+    aprendizajes: "Trabajar en un producto real durante 6 meses me permitió comprender la importancia de diseñar considerando limitaciones técnicas, tiempos de desarrollo y coherencia entre diseño e implementación."
   },
   {
     slug: "TaskApp",
@@ -102,6 +131,19 @@ export const projects: Project[] = [
       "/Proyects-UX-UI/Task-App.png"
     ],
     youtube: "https://www.youtube.com/watch?v=6ZB_oYsGi3s",
+    contexto: undefined,
+    investigacion: "Incluyó entrevistas, benchmarking, mapas de afinidad, proto-personas y card sorting para comprender necesidades reales de usuarios.",
+    insightsClave: [
+      "Los usuarios priorizan simplicidad sobre funciones complejas.",
+      "La organización visual impacta directamente en la percepción de productividad.",
+      "Las tareas colaborativas requieren claridad en estados y responsabilidades."
+    ],
+    decisionesDeDiseño: [
+      "Definí un MVP enfocado en funciones esenciales.",
+      "Diseñé arquitectura de información clara basada en card sorting.",
+      "Apliqué Atomic Design para mantener consistencia visual."
+    ],
+    aprendizajes: "Este proyecto reforzó la importancia de validar hipótesis antes de diseñar y estructurar decisiones en base a evidencia."
   },
 ];
 
