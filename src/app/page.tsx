@@ -7,6 +7,7 @@ import Services from "@/components/services/services";
 import Contact from "@/components/contact/contact";
 import FloatingChat from "@/components/floatingChat/FloatingChat";
 import Footer from "@/components/footer/footer";
+import LanguageToggle from "@/components/language-toggle/LanguageToggle";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
           
        {/* Chat */}
       <FloatingChat/>
+      
+      {/* Language Toggle */}
+      <LanguageToggle />
     </main>
   );
 };

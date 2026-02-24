@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = getTranslation('footer', language);
+
   return (
     <footer className="bg-black border-t border-gray-800/50">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-12">
@@ -20,25 +25,25 @@ export default function Footer() {
               href="/#projects" 
               className="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              Proyectos
+              {t.projects}
             </Link>
             <Link 
               href="/#tech" 
               className="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              Stack
+              {t.stack}
             </Link>
             <Link 
               href="/#contact" 
               className="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium"
             >
-              Contacto
+              {t.contact}
             </Link>
           </nav>
 
           {/* Copyright */}
           <div className="text-gray-500 text-sm">
-            © 2026 Daiana Lopez. Todos los derechos reservados.
+            {t.copyright}
           </div>
         </div>
       </div>

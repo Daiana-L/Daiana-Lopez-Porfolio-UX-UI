@@ -3,8 +3,19 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
 
 function Proyects() {
+  const { language } = useLanguage();
+  const t = getTranslation('projects', language);
+
+  // Helper function to safely get translated content
+  const getTranslatedContent = (content: { es: string; en: string } | undefined): string => {
+    if (!content) return '';
+    return (content as any)[language] || content.es;
+  };
+
   return (
     <div>
      <section id="projects" className="pt-2 sm:pt-4 pb-10 scroll-mt-16 md:scroll-mt-24 px-4 sm:px-6">
@@ -18,19 +29,19 @@ function Proyects() {
         <div className="flex items-center justify-center gap-4 mb-6">
           <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
           <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
-            PORTFOLIO
+            {t.eyebrow}
           </span>
           <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
         </div>
 
         {/* Título principal */}
         <h2 className="text-xl sm:text-2xl md:text-2xl font-bold mb-6 text-white text-center leading-tight">
-          Proyectos UX/UI Designer
+          {t.title}
         </h2>
 
         {/* Descripción */}
         <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-          Explora mis proyectos más destacados donde diseño experiencias digitales intuitivas y atractivas, combinando investigación de usuarios, prototipado y desarrollo frontend para crear soluciones que realmente importan.
+          {t.description}
         </p>
 
     {/* Grid responsive */}
@@ -62,7 +73,7 @@ function Proyects() {
                 UX/UI
               </span>
               <span className="bg-sky-500/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
-                Case Study
+                {t.caseStudy}
               </span>
             </div>
           </div>
@@ -81,7 +92,7 @@ function Proyects() {
             <p
               className="mb-3 text-gray-300 text-xs leading-relaxed flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
             >
-              {project.summary}
+              {getTranslatedContent(project.summary)}
             </p>
             
             {/* Chips de tecnologías */}
@@ -106,7 +117,7 @@ function Proyects() {
               href={`/proyectos/${project.slug}`}
               className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-2 px-5 rounded-xl transition-all duration-300 text-xs sm:text-sm w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
             >
-              <span>Ver proyecto</span>
+              <span>{t.viewProject}</span>
               <svg className="w-3 h-3 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

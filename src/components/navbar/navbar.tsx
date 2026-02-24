@@ -2,9 +2,13 @@
 import React, { useState } from 'react';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 import Link from "next/link";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = getTranslation('navbar', language);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,27 +34,27 @@ function Navbar() {
         <ul className="hidden md:flex space-x-3 font-medium">
           <li>
             <a href="/#about" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
-              Sobre mí
+              {t.about}
             </a>
           </li>
           <li>
             <a href="/#technologies" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Tecnologías
+              {t.technologies}
             </a>
           </li>
           <li>
             <a href="/#services" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Servicios
+              {t.services}
             </a>
           </li>
           <li>
             <a href="/#projects" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Proyectos
+              {t.projects}
             </a>
           </li>
           <li>
             <a href="/#contact" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Contacto
+              {t.contact}
             </a>
           </li>
         </ul>
@@ -66,27 +70,27 @@ function Navbar() {
         <ul className="md:hidden bg-gray-900/80 backdrop-blur-md flex flex-col items-center space-y-3 py-4">
           <li>
             <a href="/#about" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out">
-              Sobre mí
+              {t.about}
             </a>
           </li>
           <li>
             <a href="/#technologies" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Tecnologías
+              {t.technologies}
             </a>
           </li>
           <li>
             <a href="/#services" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Servicios
+              {t.services}
             </a>
           </li>
           <li>
             <a href="/#projects" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Proyectos
+              {t.projects}
             </a>
           </li>
           <li>
             <a href="/#contact" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              Contacto
+              {t.contact}
             </a>
           </li>
         </ul>

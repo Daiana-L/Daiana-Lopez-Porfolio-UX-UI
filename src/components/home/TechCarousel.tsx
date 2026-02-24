@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
 
 type TechItem = {
     name: string;
@@ -27,9 +29,12 @@ const techColors: { [key: string]: { bg: string; text: string } } = {
 };
 
 export default function TechCarousel({
-    title = "Tecnologías",
+    title,
     items,
 }: TechCarouselProps) {
+    const { language } = useLanguage();
+    const t = getTranslation('technologies', language);
+    
     const defaultItems = useMemo<TechItem[]>(
         () => [
             { name: "Figma" },
@@ -102,19 +107,19 @@ export default function TechCarousel({
                 <div className="flex items-center justify-center gap-4 mb-6">
                     <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
                     <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
-                        STACK
+                        {t.eyebrow}
                     </span>
                     <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
                 </div>
 
                 {/* Título principal */}
                 <h2 className="text-xl sm:text-2xl md:text-2xl font-bold mb-6 text-white text-center leading-tight">
-                    Tecnologías & Herramientas
+                    {t.title}
                 </h2>
 
                 {/* Descripción */}
                 <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-                    Herramientas y tecnologías que utilizo en mis proyectos de diseño y desarrollo.
+                    {t.description}
                 </p>
 
                 {/* Carousel Container */}

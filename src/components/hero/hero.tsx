@@ -2,8 +2,15 @@ import React from 'react'
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PiMapPinLine } from 'react-icons/pi';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
+import { useCVDownload } from '@/hooks/useCVDownload';
 
 function Hero() {
+  const { language } = useLanguage();
+  const t = getTranslation('hero', language);
+  const { cvPath } = useCVDownload();
+
   return (
     <div>
 {/* Hero */}
@@ -36,50 +43,48 @@ function Hero() {
       <div className="flex flex-col items-center justify-center gap-4 mb-2 md:flex-row md:items-center md:justify-start md:gap-3">
         <span className="w-10 h-0.5 bg-sky-400 rounded md:w-8" />
         <span className="text-xs sm:text-sm block text-sky-400 font-semibold tracking-[0.12em] uppercase">
-          Bienvenidos a mi porfolio profesional!
+          {t.welcome}
         </span>
       </div>
 
         <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold mt-1 mb-3 text-slate-50">
-        Daiana Lopez, UX/UI Designer
+        {t.title}
       </h1>
 
       <p className="text-sm sm:text-base md:text-xl mb-3 text-slate-400 leading-relaxed">
-        Enfocada en la creación de interfaces funcionales, accesibles y centradas
-        en el usuario. He realizado diversos diseños en Figma, trabajando con
-        componentes reutilizables, Atomic Design y prototipos interactivos.
+        {t.description}
       </p>
 
       <p className="font-medium flex items-center justify-center md:justify-start gap-2 text-slate-500 mb-2">
         <PiMapPinLine size={18} className="text-sky-400" />
-        <span>Buenos Aires, Argentina</span>
+        <span>{t.location}</span>
       </p>
 
       <p className="mb-10 text-slate-500 text-sm sm:text-base text-center md:text-left">
-        Para conocerme mas personalmente puede usar mi{" "}
+        {t.chatIntro}{" "}
         <a
           href="#"
           className="text-sky-400 hover:text-sky-300 underline underline-offset-4"
         >
-          chat de IA personalizado
+          {t.chatLink}
         </a>
         !
       </p>
 
       <div className="flex flex-col sm:flex-row gap-3 sm:items-center mb-8 w-full justify-center md:justify-start">
         <a
-          href="/Daiana-L-CV-UX-UI.pdf"
+          href={cvPath}
           download
           className="inline-flex items-center justify-center gap-2 sm:text-xl bg-gradient-to-br from-sky-400 to-cyan-500 text-[#07091C] font-semibold px-8 sm:px-6 py-4 rounded-lg hover:from-sky-300 hover:to-cyan-400 transition shadow-[0_10px_30px_rgba(56,189,248,0.18)] w-full sm:w-auto"
         >
-          Descargar CV
+          {t.downloadCV}
         </a>
 
         <a
           href="/#projects"
           className="inline-flex items-center justify-center gap-2 sm:text-xl bg-transparent text-slate-50 font-semibold px-8 sm:px-6 py-4 rounded-lg border border-sky-400/30 hover:border-sky-400/60 hover:bg-sky-400/10 transition w-full sm:w-auto"
         >
-          Ver proyectos
+          {t.viewProjects}
           <span aria-hidden className="text-sky-300">→</span>
         </a>
       </div>

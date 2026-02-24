@@ -5,10 +5,14 @@ import { PiGithubLogoBold, PiLinkedinLogoBold, PiEnvelopeBold, PiLinkBold, PiCal
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getTranslation } from '@/translations';
 
 function Contact() {
   const [formData, setFormData] = useState({ email: "", message: "" });
   const [sending, setSending] = useState(false);
+  const { language } = useLanguage();
+  const t = getTranslation('contact', language);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,12 +38,12 @@ function Contact() {
         () => {
           setSending(false);
           setFormData({ email: "", message: "" });
-          toast.success("¡Mensaje enviado!");
+          toast.success(t.messageSent);
         },
         (error) => {
           setSending(false);
           console.error("Error al enviar el mensaje:", error);
-          toast.error("Error al enviar el mensaje");
+          toast.error(t.messageError);
         }
       );
   };
@@ -57,19 +61,19 @@ function Contact() {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-400"></div>
             <span className="text-cyan-400 text-[8px] font-semibold tracking-[0.3em] uppercase">
-              CONTACTO
+              {t.eyebrow}
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-400"></div>
           </div>
 
           {/* Título principal */}
           <h2 className="text-xl sm:text-2xl md:text-2xl font-bold mb-6 text-white text-center leading-tight">
-            Conectemos
+            {t.title}
           </h2>
 
           {/* Descripción */}
           <p className="text-gray-400 text-sm text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-            ¿Tenés un proyecto en mente? Escribime y creemos algo increíble juntos.
+            {t.description}
           </p>
 
           {/* Two Column Layout */}
@@ -80,7 +84,7 @@ function Contact() {
                 <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                   <PiEnvelopeBold size={16} className="text-cyan-400" />
                 </div>
-                <h3 className="text-white font-semibold text-lg">Enviarme un mensaje</h3>
+                <h3 className="text-white font-semibold text-lg">{t.sendMessage}</h3>
               </div>
 
               <form onSubmit={sendEmail} className="flex flex-col gap-3">
@@ -88,7 +92,7 @@ function Contact() {
                   <input
                     type="email"
                     name="email"
-                    placeholder="tuemail@gmail.com"
+                    placeholder={t.emailPlaceholder}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -99,7 +103,7 @@ function Contact() {
                 <div>
                   <textarea
                     name="message"
-                    placeholder="Dejame tu mensaje..."
+                    placeholder={t.messagePlaceholder}
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -109,15 +113,15 @@ function Contact() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 md:mt-10">
-                  <p className="text-gray-400 text-xs">Respondo en 1-24hs.</p>
+                  <p className="text-gray-400 text-xs">{t.responseTime}</p>
                   <button
                     type="submit"
                     disabled={sending}
                     className={`bg-cyan-400 hover:bg-cyan-300 text-black font-semibold py-3 px-6 rounded-xl transition w-full sm:w-auto cursor-pointer flex items-center justify-center gap-2 text-sm ${sending ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    {sending ? "Enviando..." : (
+                    {sending ? t.sending : (
                       <>
-                        Enviar
+                        {t.send}
                         <PiPaperPlaneRightBold size={16} />
                       </>
                     )}
@@ -134,11 +138,11 @@ function Contact() {
                   <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                     <PiLinkBold size={16} className="text-cyan-400" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg">También me encontrás en</h3>
+                  <h3 className="text-white font-semibold text-lg">{t.alsoFindMe}</h3>
                 </div>
 
                 <p className="text-gray-400 text-xs mb-4">
-                  LinkedIn para oportunidades laborales o networking.
+                  {t.linkedinDescription}
                 </p>
 
                 <a
@@ -151,7 +155,7 @@ function Contact() {
                     <PiLinkedinLogoBold size={20} className="text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-white font-medium text-sm">Mi LinkedIn</p>
+                    <p className="text-white font-medium text-sm">{t.myLinkedin}</p>
                     <p className="text-gray-400 text-xs">Daiana Celeste Lopez</p>
                   </div>
                 </a>
@@ -163,12 +167,12 @@ function Contact() {
                   <div className="w-8 h-8 bg-cyan-400/20 rounded-lg flex items-center justify-center">
                     <PiCalendarBold size={16} className="text-cyan-400" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg">Disponible para proyectos</h3>
+                  <h3 className="text-white font-semibold text-lg">{t.available}</h3>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse flex-shrink-0 mb-4 ml-3"></div>
-                  <p className="text-gray-300 text-sm">Actualmente open to work · Buenos Aires, Argentina</p>
+                  <p className="text-gray-300 text-sm">{t.currentlyOpen}</p>
                 </div>
               </div>
             </div>
