@@ -303,7 +303,7 @@ export default function ProjectPage({
                         <p className="text-gray-400 text-xs leading-relaxed">
                             {t.marketplaceWebDesc}
                         </p>
-                    </div>~
+                    </div>
 
                     {/* Prototipo Mobile Card */}
                     <div className="bg-gray-900/50 border border-gray-800/50 rounded-xl p-2 hover:border-sky-500/50 transition-colors">
