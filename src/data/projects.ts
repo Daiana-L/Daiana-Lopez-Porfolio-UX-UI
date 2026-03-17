@@ -167,12 +167,12 @@ export const projects: Project[] = [
     name: "ChillaLabs",
     technologies: ["UX Research", "Figma", "UX/UI Design", "Prototyping"],
     description: {
-      es: "Diseño UX/UI para ChillaLabs, mi emprendimiento personal de figuras 3D pintadas a mano. Creé la identidad visual, el catálogo digital y la experiencia de usuario para mostrar los productos, facilitar el contacto con clientes y profesionalizar la presencia online del negocio.",
-      en: "UX/UI design for ChillaLabs, my personal venture of hand-painted 3D figures. I created the visual identity, digital catalog and user experience to showcase products, facilitate client contact and professionalize the online presence of the business."
+      es: "Cliente real: mi propio emprendimiento. ChillaLabs es mi negocio de figuras 3D pintadas a mano, y yo fui tanto la diseñadora como la cliente. Identifiqué una necesidad concreta — no tener presencia digital — y diseñé la solución completa: identidad visual, catálogo de productos y experiencia de contacto. El resultado está en uso real y activo.",
+      en: "Real client: my own business. ChillaLabs is my hand-painted 3D figures venture, and I was both the designer and the client. I identified a concrete need — no digital presence — and designed the complete solution: visual identity, product catalog and contact experience. The result is live and actively in use."
     },
     summary: {
-      es: "Diseño UX/UI para mi emprendimiento de figuras 3D pintadas a mano.",
-      en: "UX/UI design for my hand-painted 3D figures venture."
+      es: "Diseño UX/UI para negocio real propio — identidad, catálogo y experiencia de contacto en producción.",
+      en: "UX/UI design for my own real business — identity, catalog and contact experience in production."
     },
     image: "/chillalabs/slice-01.png",
     youtube: "",
@@ -256,12 +256,12 @@ export const projects: Project[] = [
     name: "TaskApp",
     technologies: ["UX Research", "User Interviews", "Figma", "Atomic Design", "Prototyping"],
     description: {
-      es: "Aplicación nativa para la gestión de tareas colaborativas. Incluye investigación UX (desk research, entrevistas, benchmarking, mapas de afinidad y empatía, proto-personas, cardsorting), definición de MVP, user flows y diseño UI con Atomic Design y prototipos interactivos",
-      en: "Native application for collaborative task management. Includes UX research (desk research, interviews, benchmarking, affinity maps and empathy, proto-personas, card sorting), MVP definition, user flows and UI design with Atomic Design and interactive prototypes"
+      es: "Proceso UX completo desde cero, sin atajos. Este proyecto académico priorizó la metodología por encima del resultado visual: desk research, entrevistas con usuarios reales, benchmarking, mapas de afinidad y empatía, proto-personas, card sorting, definición de MVP, user flows y diseño UI con Atomic Design. Es el proyecto donde más profundicé en investigación y donde aprendí a tomar decisiones de diseño basadas en evidencia.",
+      en: "Complete UX process from scratch, no shortcuts. This academic project prioritized methodology over visual output: desk research, real user interviews, benchmarking, affinity and empathy maps, proto-personas, card sorting, MVP definition, user flows and UI design with Atomic Design. It is the project where I went deepest into research and learned to make evidence-based design decisions."
     },
     summary: {
-      es: "App nativa para gestión de tareas colaborativas con investigación UX y prototipos interactivos.",
-      en: "Native app for collaborative task management with UX research and interactive prototypes."
+      es: "Proceso UX completo — research, síntesis, arquitectura de información y prototipo interactivo.",
+      en: "Full UX process — research, synthesis, information architecture and interactive prototype."
     },
     image: "/Proyect-portadas/TaskApp-portada.png",
     mobilePreviewImages: [
