@@ -38,7 +38,7 @@ export default function Chat() {
 
     if (esSoloSaludo && chatElementRef.current?.addMessage) {
       chatElementRef.current.addMessage({
-        text: "¡Qué bueno verte por acá! 😄 ¿Querés que te cuente un poco sobre mí o mis proyectos?",
+        text: "¡Qué bueno verte por acá! ¿Querés que te cuente un poco sobre mí o mis proyectos?",
         sender: "ai",
       });
       return;
@@ -60,7 +60,7 @@ export default function Chat() {
       setTimeout(() => {
         if (chatElementRef.current?.addMessage) {
           chatElementRef.current.addMessage({
-            text: "¡Fue muy divertido hablar contigo! 😄 Ahora debo irme. ¡Hasta la próxima!",
+            text: "¡Fue muy divertido hablar contigo! Ahora debo irme. ¡Hasta la próxima!",
             sender: "ai",
           });
         }
@@ -114,7 +114,7 @@ export default function Chat() {
             placeholder: { text: "Chatea conmigo!" },
           }}
           introMessage={{
-            text: "¡bienvenido a mi porfolio! 😄",
+            text: "¡Bienvenido a mi portfolio!",
           }}
           directConnection={{
             cohere: {

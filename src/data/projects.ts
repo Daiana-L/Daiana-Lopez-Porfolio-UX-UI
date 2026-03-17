@@ -61,71 +61,15 @@ export type Project = {
     es: string;
     en: string;
   };
+  caseStudySlices?: string[];
+  caseStudyNote?: string;
+  caseStudyContext?: string[];
+  caseStudyTools?: string[];
+  caseStudyType?: string;
+  caseStudyCategory?: string;
 };
 
 export const projects: Project[] = [
-  {
-    slug: "studioconnect",
-    name: "StudioConnect",
-    description: {
-      es: "Plataforma web para conectar músicos con estudios de grabación. Rol como Frontend Developer & UX/UI Designer: diseño de interfaces en Figma, formularios de autenticación/registro, integración de geolocalización, desarrollo de páginas clave (reservas, dashboard, perfiles) y manejo de estado global con Zustand.",
-      en: "Web platform to connect musicians with recording studios. Role as Frontend Developer & UX/UI Designer: interface design in Figma, authentication/registration forms, geolocation integration, development of key pages (bookings, dashboard, profiles) and global state management with Zustand."
-    },
-    summary: {
-      es: "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
-      en: "Web platform to connect musicians with recording studios. UX/UI + Frontend."
-    },
-    image: "/Proyects-UX-UI/S1.png",
-    technologies: ["UX Research", "Figma", "React", "Next.js", "Tailwind CSS", "Zustand"],
-    mobilePreviewImage: "/mobile-preview/HOME-studioconnect.png",
-    mobilePreviewImages: [
-      "/mobile-preview/studioconnet-studio.png",
-      "/mobile-preview/HOME-studioconnect.png",
-      
-    ],
-    youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
-    prototypes: [
-      {
-        title: "Prototipo web",
-        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=14-25&t=4VzV52HoYFagGyyt-0&scaling=scale-down-width&content-scaling=fixed&page-id=14%3A24&starting-point-node-id=14%3A25",
-      },
-      {
-        title: "Prototipo web",
-        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=1-4334&t=TvM42Bt0CnMfttio-0&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A4333&starting-point-node-id=1%3A4334",
-      },
-    ],
-    prototypesPlacement: "beforeImages",
-    imagesLarge: [
-      "/Proyects-UX-UI/S1.png",
-      "/Proyects-UX-UI/studioconnect-dashboard.png",
-      "/Proyects-UX-UI/studioconnect-studio-detail.png",
-    ],
-    contexto: undefined,
-    problema: {
-      es: "Los usuarios necesitaban un proceso de reserva claro y confiable, pero la estructura inicial carecía de una arquitectura bien definida y jerarquía visual consistente.",
-      en: "Users needed a clear and reliable booking process, but the initial structure lacked well-defined architecture and consistent visual hierarchy."
-    },
-    insights: {
-      es: "La información clave no estaba priorizada.\nEl flujo de reserva generaba dudas en pasos intermedios.\nLa navegación no guiaba correctamente la acción principal.",
-      en: "Key information was not prioritized.\nThe booking flow generated doubts in intermediate steps.\nNavigation did not correctly guide the main action."
-    },
-    decisionesEstrategicas: {
-      es: [
-        "Rediseñé el flujo de autenticación y reserva para hacerlo más directo.",
-        "Mejoré la jerarquía visual destacando acciones primarias.",
-        "Implementé consistencia en componentes para reforzar identidad y claridad."
-      ],
-      en: [
-        "Redesigned authentication and booking flow to make it more direct.",
-        "Improved visual hierarchy highlighting primary actions.",
-        "Implemented consistency in components to reinforce identity and clarity."
-      ]
-    },
-    resultado: {
-      es: "El proyecto evolucionó hacia una experiencia más estructurada y clara, enfocada en reducir fricción y facilitar la conversión.",
-      en: "The project evolved towards a more structured and clear experience, focused on reducing friction and facilitating conversion."
-    }
-  },
   {
     slug: "DonMorfi",
     name: "DonMorfi",
@@ -198,6 +142,116 @@ export const projects: Project[] = [
     }
   },
   {
+    slug: "correo-argentino",
+    name: "Rediseño UX/UI — Correo Argentino",
+    technologies: ["UX Research", "Heuristic Evaluation", "Journey Map", "Tree Testing", "A/B Testing", "FVD Matrix", "Lean UX", "Figma", "Design System", "Prototyping"],
+    description: {
+      es: "Rediseño end-to-end del sitio de Correo Argentino, uno de los servicios postales más usados del país. Identifiqué problemas críticos de usabilidad mediante evaluación heurística, encuestas, entrevistas y tree testing. Sinteticé los hallazgos en una user persona, journey maps y una matriz de necesidades, y definí el MVP con una matriz FVD. El rediseño incluyó wireframes evolutivos, A/B testing de componentes clave y validación con usuarios reales que alcanzaron un 80% de tasa de éxito en las tareas principales. El prototipo de alta fidelidad está actualmente en desarrollo.",
+      en: "End-to-end redesign of Correo Argentino's website, one of the country's most used postal services. I identified critical usability issues through heuristic evaluation, surveys, interviews, and tree testing. I synthesized findings into a user persona, journey maps, and a needs matrix, then defined the MVP using an FVD matrix. The redesign included evolutionary wireframes, A/B testing of key components, and real user validation achieving an 80% task success rate. The high-fidelity prototype is currently in development."
+    },
+    summary: {
+      es: "Rediseño UX/UI end-to-end con research, validación con usuarios y 80% de tasa de éxito en testing.",
+      en: "End-to-end UX/UI redesign with research, user validation and 80% task success rate in testing."
+    },
+    image: "/correo-argentino/slice-01.png",
+    youtube: "",
+    caseStudySlices: [1, 2, 8, 19, 25, 28, 36, 48, 53, 70, 75, 77, 78, 79, 81].map((n) => `/correo-argentino/slice-${String(n).padStart(2, "0")}.png`),
+    caseStudyNote: "El prototipo de alta fidelidad se encuentra actualmente en desarrollo.",
+    caseStudyContext: ["Académico", "Grupal"],
+    caseStudyTools: ["Figma", "Google Forms", "Maze"],
+    caseStudyType: "REDISEÑO UX/UI · END-TO-END",
+    caseStudyCategory: "PROYECTO ACADÉMICO · UX RESEARCH + UI DESIGN",
+  },
+  {
+    slug: "chillalabs",
+    name: "ChillaLabs",
+    technologies: ["UX Research", "Figma", "UX/UI Design", "Prototyping"],
+    description: {
+      es: "Diseño UX/UI para ChillaLabs, mi emprendimiento personal de figuras 3D pintadas a mano. Creé la identidad visual, el catálogo digital y la experiencia de usuario para mostrar los productos, facilitar el contacto con clientes y profesionalizar la presencia online del negocio.",
+      en: "UX/UI design for ChillaLabs, my personal venture of hand-painted 3D figures. I created the visual identity, digital catalog and user experience to showcase products, facilitate client contact and professionalize the online presence of the business."
+    },
+    summary: {
+      es: "Diseño UX/UI para mi emprendimiento de figuras 3D pintadas a mano.",
+      en: "UX/UI design for my hand-painted 3D figures venture."
+    },
+    image: "/chillalabs/slice-01.png",
+    youtube: "",
+    caseStudySlices: Array.from({ length: 5 }, (_, i) => `/chillalabs/slice-${String(i + 1).padStart(2, "0")}.png`),
+    problema: {
+      es: "ChillaLabs no contaba con un catálogo digital donde los clientes pudieran ver los productos disponibles. Las consultas se gestionaban de forma informal por redes sociales, sin información clara sobre precios, stock ni variantes. Esto generaba fricción en el proceso de compra y dificultaba el crecimiento del negocio.",
+      en: "ChillaLabs had no digital catalog where clients could browse available products. Inquiries were handled informally through social media, with no clear information on pricing, stock or variants. This created friction in the buying process and hindered business growth."
+    },
+    impacto: {
+      es: "El diseño permitió centralizar el catálogo de productos en un solo lugar accesible, mejorar la comunicación con los clientes y darle al emprendimiento una imagen profesional y coherente. Esto facilitó el proceso de venta y aumentó la confianza de los compradores.",
+      en: "The design made it possible to centralize the product catalog in one accessible place, improve communication with clients and give the venture a professional and coherent image. This streamlined the sales process and increased buyer confidence."
+    },
+    caseStudyContext: ["Proyecto Personal", "Negocio"],
+    caseStudyTools: ["Figma", "React", "Next.js", "Tailwind CSS"],
+    caseStudyType: "DISEÑO UX/UI · END-TO-END",
+    caseStudyCategory: "PROYECTO PERSONAL · UX RESEARCH + UI DESIGN",
+  },
+  {
+    slug: "studioconnect",
+    name: "StudioConnect",
+    description: {
+      es: "Plataforma web para conectar músicos con estudios de grabación. Rol como Frontend Developer & UX/UI Designer: diseño de interfaces en Figma, formularios de autenticación/registro, integración de geolocalización, desarrollo de páginas clave (reservas, dashboard, perfiles) y manejo de estado global con Zustand.",
+      en: "Web platform to connect musicians with recording studios. Role as Frontend Developer & UX/UI Designer: interface design in Figma, authentication/registration forms, geolocation integration, development of key pages (bookings, dashboard, profiles) and global state management with Zustand."
+    },
+    summary: {
+      es: "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
+      en: "Web platform to connect musicians with recording studios. UX/UI + Frontend."
+    },
+    image: "/Proyects-UX-UI/S1.png",
+    technologies: ["UX Research", "Figma", "React", "Next.js", "Tailwind CSS", "Zustand"],
+    mobilePreviewImage: "/mobile-preview/HOME-studioconnect.png",
+    mobilePreviewImages: [
+      "/mobile-preview/studioconnet-studio.png",
+      "/mobile-preview/HOME-studioconnect.png",
+    ],
+    youtube: "https://www.youtube.com/watch?v=tRjDscwI334",
+    prototypes: [
+      {
+        title: "Prototipo web",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=14-25&t=4VzV52HoYFagGyyt-0&scaling=scale-down-width&content-scaling=fixed&page-id=14%3A24&starting-point-node-id=14%3A25",
+      },
+      {
+        title: "Prototipo web",
+        src: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/RA3gqGTOmEkDLCWFsisvIB/studioConnect?node-id=1-4334&t=TvM42Bt0CnMfttio-0&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A4333&starting-point-node-id=1%3A4334",
+      },
+    ],
+    prototypesPlacement: "beforeImages",
+    imagesLarge: [
+      "/Proyects-UX-UI/S1.png",
+      "/Proyects-UX-UI/studioconnect-dashboard.png",
+      "/Proyects-UX-UI/studioconnect-studio-detail.png",
+    ],
+    contexto: undefined,
+    problema: {
+      es: "Los usuarios necesitaban un proceso de reserva claro y confiable, pero la estructura inicial carecía de una arquitectura bien definida y jerarquía visual consistente.",
+      en: "Users needed a clear and reliable booking process, but the initial structure lacked well-defined architecture and consistent visual hierarchy."
+    },
+    insights: {
+      es: "La información clave no estaba priorizada.\nEl flujo de reserva generaba dudas en pasos intermedios.\nLa navegación no guiaba correctamente la acción principal.",
+      en: "Key information was not prioritized.\nThe booking flow generated doubts in intermediate steps.\nNavigation did not correctly guide the main action."
+    },
+    decisionesEstrategicas: {
+      es: [
+        "Rediseñé el flujo de autenticación y reserva para hacerlo más directo.",
+        "Mejoré la jerarquía visual destacando acciones primarias.",
+        "Implementé consistencia en componentes para reforzar identidad y claridad."
+      ],
+      en: [
+        "Redesigned authentication and booking flow to make it more direct.",
+        "Improved visual hierarchy highlighting primary actions.",
+        "Implemented consistency in components to reinforce identity and clarity."
+      ]
+    },
+    resultado: {
+      es: "El proyecto evolucionó hacia una experiencia más estructurada y clara, enfocada en reducir fricción y facilitar la conversión.",
+      en: "The project evolved towards a more structured and clear experience, focused on reducing friction and facilitating conversion."
+    }
+  },
+  {
     slug: "TaskApp",
     name: "TaskApp",
     technologies: ["UX Research", "User Interviews", "Figma", "Atomic Design", "Prototyping"],
@@ -210,7 +264,7 @@ export const projects: Project[] = [
       en: "Native app for collaborative task management with UX research and interactive prototypes."
     },
     image: "/Proyect-portadas/TaskApp-portada.png",
-       mobilePreviewImages: [
+    mobilePreviewImages: [
       "/Proyects-UX-UI/Task-App.png"
     ],
     youtube: "https://www.youtube.com/watch?v=6ZB_oYsGi3s",

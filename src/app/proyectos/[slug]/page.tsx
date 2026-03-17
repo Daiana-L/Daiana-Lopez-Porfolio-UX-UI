@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/navbar";
 import { projects } from "@/data/projects";
 import ProjectResponsiveMedia from "@/components/projects/ProjectResponsiveMedia";
+import CaseStudyCarousel from "@/components/projects/CaseStudyCarousel";
 import { PiGlobeBold, PiDeviceMobileBold, PiPaletteBold } from "react-icons/pi";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getTranslation } from '@/translations';
@@ -68,6 +69,138 @@ export default function ProjectPage({
         if (project.name.toLowerCase().includes('task')) return t.projectCategories.task;
         return t.projectCategories.default;
     };
+
+    // Case study slices-only mode
+    if (project.caseStudySlices && project.caseStudySlices.length > 0) {
+        return (
+            <main className="bg-black text-white font-sans min-h-screen">
+                <Navbar />
+                <div className="pt-20 pb-16">
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-6">
+                        {/* Back Navigation */}
+                        <Link
+                            href="/#projects"
+                            className="text-sky-500 hover:text-sky-400 text-xs sm:text-sm transition-colors inline-flex items-center gap-2 mb-5 sm:mb-2"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                            {t.backToProjects}
+                        </Link>
+
+                        {/* Project Header */}
+                        <div className="mb-4">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
+                                    {project.name}
+                                </h1>
+                                <div className="flex flex-col sm:items-end gap-1">
+                                    <span className="text-sky-400 text-xs font-semibold tracking-wide uppercase">
+                                        {project.caseStudyType ?? "REDISEÑO UX/UI · END-TO-END"}
+                                    </span>
+                                    <span className="text-gray-400 text-[10px] font-medium tracking-wide uppercase">
+                                        {project.caseStudyCategory ?? "PROYECTO ACADÉMICO · UX RESEARCH + UI DESIGN"}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Project Details Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+                            {/* ROL */}
+                            <div className="bg-gray-900/50 border border-gray-800/50 rounded-xl p-3">
+                                <h3 className="text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-2">{t.role}</h3>
+                                <div className="flex flex-wrap gap-1.5">
+                                    <span className="bg-sky-500/20 text-sky-400 text-xs font-medium px-2 py-1 rounded-lg border border-sky-500/30">
+                                        UX Researcher
+                                    </span>
+                                    <span className="bg-sky-500/20 text-sky-400 text-xs font-medium px-2 py-1 rounded-lg border border-sky-500/30">
+                                        UI Designer
+                                    </span>
+                                </div>
+                            </div>
+                            {/* CONTEXTO */}
+                            <div className="bg-gray-900/50 border border-gray-800/50 rounded-xl p-3">
+                                <h3 className="text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-2">{t.context}</h3>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {(project.caseStudyContext ?? ["Académico", "Grupal"]).map((ctx, i) => (
+                                        <span key={i} className="bg-purple-500/20 text-purple-400 text-xs font-medium px-2 py-1 rounded-lg border border-purple-500/30">
+                                            {ctx}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            {/* HERRAMIENTAS */}
+                            <div className="bg-gray-900/50 border border-gray-800/50 rounded-xl p-3">
+                                <h3 className="text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-2">{t.tools}</h3>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {(project.caseStudyTools ?? ["Figma"]).map((tool, index) => (
+                                        <span key={index} className="bg-gray-800 text-gray-300 text-xs font-medium px-2 py-1 rounded-lg border border-gray-700">
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            {/* TIPO */}
+                            <div className="bg-gray-900/50 border border-gray-800/50 rounded-xl p-3">
+                                <h3 className="text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-2">{t.type}</h3>
+                                <div className="flex flex-wrap gap-1.5">
+                                    <span className="bg-green-500/20 text-green-400 text-xs font-medium px-2 py-1 rounded-lg border border-green-500/30">
+                                        Case Study
+                                    </span>
+                                    <span className="bg-green-500/20 text-green-400 text-xs font-medium px-2 py-1 rounded-lg border border-green-500/30">
+                                        End-to-End
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Overview / Problemática / Impacto */}
+                    {(project.description || project.problema || project.impacto) && (
+                        <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 flex flex-col gap-4">
+                            {project.description && (
+                                <div>
+                                    <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
+                                        <span className="w-0.5 h-3 bg-sky-400 rounded-full"></span>
+                                        {t.overview}
+                                    </h2>
+                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                        {getTranslatedContent(project.description)}
+                                    </p>
+                                </div>
+                            )}
+                            {project.problema && (
+                                <div>
+                                    <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
+                                        <span className="w-0.5 h-3 bg-orange-400 rounded-full"></span>
+                                        {t.problem}
+                                    </h2>
+                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                        {getTranslatedContent(project.problema)}
+                                    </p>
+                                </div>
+                            )}
+                            {project.impacto && (
+                                <div>
+                                    <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
+                                        <span className="w-0.5 h-3 bg-blue-400 rounded-full"></span>
+                                        {t.impact}
+                                    </h2>
+                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                        {getTranslatedContent(project.impacto)}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {/* Carousel */}
+                    <CaseStudyCarousel slices={project.caseStudySlices} note={project.caseStudyNote} />
+                </div>
+            </main>
+        );
+    }
 
     return (
         <main className="bg-black text-white font-sans min-h-screen">

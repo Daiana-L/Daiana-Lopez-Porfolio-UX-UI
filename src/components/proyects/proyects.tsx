@@ -55,7 +55,7 @@ function Proyects() {
           transition={{ duration: 0.5, delay: index * 0.2 }}
         >
           {/* Imagen con overlay premium */}
-          <div className="relative h-32 sm:h-40 md:h-36 overflow-hidden">
+          <div className="relative h-32 sm:h-32 md:h-28 overflow-hidden">
             <Image
               src={project.image}
               alt={project.name}
@@ -78,50 +78,48 @@ function Proyects() {
             </div>
           </div>
           
-          {/* Contenido con mejor jerarquía */}
-          <div className="p-4 text-left flex flex-col flex-grow">
-            {/* Título premium */}
-            <div className="mb-2">
-              <h3 className="text-lg sm:text-xl md:text-md font-bold text-white mb-1.5 leading-tight">
+          {/* Contenido altura fija con justify-between */}
+          <div className="p-3 text-left flex flex-col flex-grow justify-between">
+
+            {/* Sección superior: título + descripción */}
+            <div>
+              <h3 className="text-sm sm:text-base font-bold text-white mb-1 leading-tight overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
                 {project.name}
               </h3>
-              <div className="w-12 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full" />
+              <div className="w-10 h-0.5 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full mb-1.5" />
+              <p className="text-gray-300 text-xs leading-relaxed overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+                {getTranslatedContent(project.summary)}
+              </p>
             </div>
-            
-            {/* Descripción */}
-            <p
-              className="mb-3 text-gray-300 text-xs leading-relaxed flex-grow overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]"
-            >
-              {getTranslatedContent(project.summary)}
-            </p>
-            
-            {/* Chips de tecnologías */}
-            <div className="mb-3 flex flex-wrap gap-1.5">
-              {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="inline-flex items-center px-2 py-1 bg-gray-800/50 hover:bg-gray-800/70 text-gray-300 text-xs font-medium rounded-full transition-colors duration-200 border border-gray-700/50"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.technologies.length > 3 && (
-                <span className="inline-flex items-center px-2 py-1 bg-gray-800/50 text-gray-400 text-xs font-medium rounded-full border border-gray-700/50">
-                  +{project.technologies.length - 3}
-                </span>
-              )}
+
+            {/* Sección inferior: chips + botón */}
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-wrap gap-1">
+                {project.technologies.slice(0, 2).map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="inline-flex items-center px-1.5 py-0.5 bg-gray-800/50 hover:bg-gray-800/70 text-gray-300 text-[10px] font-medium rounded-full transition-colors duration-200 border border-gray-700/50"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 2 && (
+                  <span className="inline-flex items-center px-1.5 py-0.5 bg-gray-800/50 text-gray-400 text-[10px] font-medium rounded-full border border-gray-700/50">
+                    +{project.technologies.length - 2}
+                  </span>
+                )}
+              </div>
+              <Link
+                href={`/proyectos/${project.slug}`}
+                className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-1.5 px-4 rounded-xl transition-all duration-300 text-xs w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
+              >
+                <span>{t.viewProject}</span>
+                <svg className="w-3 h-3 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
-            
-            {/* Botón mejorado con icono */}
-            <Link
-              href={`/proyectos/${project.slug}`}
-              className="inline-flex items-center justify-center bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-semibold py-2 px-5 rounded-xl transition-all duration-300 text-xs sm:text-sm w-fit shadow-lg hover:shadow-xl hover:shadow-sky-500/25 group"
-            >
-              <span>{t.viewProject}</span>
-              <svg className="w-3 h-3 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+
           </div>
         </motion.div>
       ))}
