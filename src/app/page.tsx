@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar/navbar";
 import Hero from "@/components/hero/hero";
 import Proyects from "@/components/proyects/proyects";
 import TechCarousel from "@/components/home/TechCarousel";
-import Services from "@/components/services/services";
+import Testimonial from "@/components/testimonial/Testimonial";
 import Contact from "@/components/contact/contact";
 import FloatingChat from "@/components/floatingChat/FloatingChat";
 import Footer from "@/components/footer/footer";
@@ -24,8 +24,8 @@ export default function Home() {
       {/* Tecnologías */}
           <TechCarousel />
 
-      {/* Servicios */}
-          <Services />
+      {/* Testimonios */}
+          <Testimonial />
 
       {/* Contacto */}
           <Contact/>

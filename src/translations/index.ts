@@ -22,9 +22,9 @@ export const translations = {
   // Hero
   hero: {
     es: {
-      welcome: 'Bienvenidos a mi porfolio profesional!',
+      welcome: 'UX/UI Designer · Open to work',
       title: 'Daiana Lopez, UX/UI Designer',
-      description: 'Enfocada en la creación de interfaces funcionales, accesibles y centradas en el usuario. He realizado diversos diseños en Figma, trabajando con componentes reutilizables, Atomic Design y prototipos interactivos.',
+      description: 'Diseñadora UX/UI con experiencia en procesos end-to-end: research, ideación, prototipado y handoff. Trabajo con Figma y sistemas de diseño con Atomic Design. También desarrollo en React y Next.js, lo que me permite colaborar directamente con equipos técnicos y entender las limitaciones desde adentro.',
       location: 'Buenos Aires, Argentina',
       chatIntro: 'Para conocerme mas personalmente puede usar mi',
       chatLink: 'chat de IA personalizado',
@@ -32,9 +32,9 @@ export const translations = {
       viewProjects: 'Ver proyectos',
     },
     en: {
-      welcome: 'Welcome to my professional portfolio!',
+      welcome: 'UX/UI Designer · Open to work',
       title: 'Daiana Lopez, UX/UI Designer',
-      description: 'Focused on creating functional, accessible, and user-centered interfaces. I have created various designs in Figma, working with reusable components, Atomic Design, and interactive prototypes.',
+      description: 'UX/UI Designer with experience in end-to-end processes: research, ideation, prototyping, and handoff. I work with Figma and design systems using Atomic Design. I also develop in React and Next.js, which allows me to collaborate directly with technical teams and understand constraints from the inside.',
       location: 'Buenos Aires, Argentina',
       chatIntro: 'To get to know me more personally, you can use my',
       chatLink: 'personalized AI chat',

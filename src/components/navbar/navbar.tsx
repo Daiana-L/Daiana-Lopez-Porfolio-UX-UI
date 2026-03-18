@@ -43,11 +43,6 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/#services" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              {t.services}
-            </a>
-          </li>
-          <li>
             <a href="/#projects" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.projects}
             </a>
@@ -76,11 +71,6 @@ function Navbar() {
           <li>
             <a href="/#technologies" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.technologies}
-            </a>
-          </li>
-          <li>
-            <a href="/#services" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
-              {t.services}
             </a>
           </li>
           <li>
