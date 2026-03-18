@@ -8,6 +8,8 @@ export const translations = {
       technologies: 'Tecnologías',
       services: 'Servicios',
       projects: 'Proyectos',
+      education: 'Educación',
+      testimonials: 'Testimonios',
       contact: 'Contacto',
     },
     en: {
@@ -15,6 +17,8 @@ export const translations = {
       technologies: 'Technologies',
       services: 'Services',
       projects: 'Projects',
+      education: 'Education',
+      testimonials: 'Testimonials',
       contact: 'Contact',
     },
   },

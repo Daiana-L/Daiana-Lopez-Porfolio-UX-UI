@@ -48,6 +48,16 @@ function Navbar() {
             </a>
           </li>
           <li>
+            <a href="/#education" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              {t.education}
+            </a>
+          </li>
+          <li>
+            <a href="/#testimonials" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              {t.testimonials}
+            </a>
+          </li>
+          <li>
             <a href="/#contact" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.contact}
             </a>
@@ -76,6 +86,16 @@ function Navbar() {
           <li>
             <a href="/#projects" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.projects}
+            </a>
+          </li>
+          <li>
+            <a href="/#education" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              {t.education}
+            </a>
+          </li>
+          <li>
+            <a href="/#testimonials" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+              {t.testimonials}
             </a>
           </li>
           <li>
