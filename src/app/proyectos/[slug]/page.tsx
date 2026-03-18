@@ -198,7 +198,7 @@ export default function ProjectPage({
                                     </ul>
                                 </div>
                             )}
-                            {project.impacto && (
+                            {project.impacto && project.slug !== "chillalabs-flujo" && (
                                 <div>
                                     <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
                                         <span className="w-0.5 h-3 bg-blue-400 rounded-full"></span>
