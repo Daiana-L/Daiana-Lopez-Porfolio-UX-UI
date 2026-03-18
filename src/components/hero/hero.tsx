@@ -17,7 +17,7 @@ function Hero() {
 <section
   className="w-full flex items-center justify-center px-4 sm:px-6
              pt-20 sm:pt-20 md:pt-20
-             min-h-[60vh] md:min-h-[40vh] mb-5"
+             min-h-[60vh] md:min-h-[40vh] mb-0"
 >
   <motion.div
     className="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-10

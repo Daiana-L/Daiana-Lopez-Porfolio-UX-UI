@@ -32,7 +32,7 @@ export default function AboutMe() {
   const t = content[language];
 
   return (
-    <section id="about" className="w-full py-16 px-4 sm:px-6 scroll-mt-16 md:scroll-mt-24">
+    <section id="about" className="w-full pt-6 pb-12 px-4 sm:px-6 scroll-mt-16 md:scroll-mt-24">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
