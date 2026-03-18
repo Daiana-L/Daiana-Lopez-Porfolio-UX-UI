@@ -66,15 +66,13 @@ export default function AboutMe() {
             ))}
           </motion.div>
 
-          {/* Foto + Tags */}
+          {/* Foto */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-4"
           >
-            {/* Foto */}
             <div className="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
               <Image
                 src="/foto-dai.jpg"
@@ -84,33 +82,30 @@ export default function AboutMe() {
                 className="w-full h-auto object-cover"
               />
             </div>
-
-            {/* Decorative block */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
-              <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">
-                En pocas palabras
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {t.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-medium px-3 py-1.5 rounded-full bg-sky-400/10 text-sky-400 border border-sky-400/20"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-2 pt-4 border-t border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-slate-400 text-xs">
-                    Disponible · Buenos Aires, Argentina
-                  </span>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
+
+        {/* Tags — fila debajo del grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-6 flex flex-wrap items-center gap-2"
+        >
+          {t.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="text-xs font-medium px-3 py-1.5 rounded-full bg-sky-400/10 text-sky-400 border border-sky-400/20"
+            >
+              {tag}
+            </span>
+          ))}
+          <span className="flex items-center gap-1.5 ml-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-slate-500 text-xs">Disponible · Buenos Aires, Argentina</span>
+          </span>
+        </motion.div>
       </div>
     </section>
   );
