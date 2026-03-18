@@ -50,21 +50,21 @@ export default function Testimonial() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           viewport={{ once: true }}
-          className="relative bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-10"
+          className="relative bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8"
         >
           {/* Comillas decorativas */}
           <span
             aria-hidden
-            className="absolute top-6 left-8 text-5xl text-sky-400/30 font-serif leading-none select-none"
+            className="absolute top-4 left-6 text-4xl text-sky-400/30 font-serif leading-none select-none"
           >
             "
           </span>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed italic pt-4">
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed italic pt-3">
             {t.quote}
           </p>
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-6 flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-cyan-500 flex items-center justify-center flex-shrink-0">
               <span className="text-[#07091C] font-bold text-sm">MS</span>
             </div>
