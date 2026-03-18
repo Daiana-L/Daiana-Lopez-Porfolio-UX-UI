@@ -15,7 +15,6 @@ function Hero() {
     <div>
 {/* Hero */}
 <section
-  id="about"
   className="w-full flex items-center justify-center px-4 sm:px-6
              pt-20 sm:pt-20 md:pt-20
              min-h-[60vh] md:min-h-[40vh] mb-5"

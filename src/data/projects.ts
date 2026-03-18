@@ -79,8 +79,8 @@ export const projects: Project[] = [
       en: "DonMorfi — Internship | UX/UI Designer FoodTech SaaS marketplace. I designed the web experience and mobile prototype in Figma, working with an Atomic Design-based Design System to ensure consistency, scalability, and efficient handoff to development. Due to confidentiality agreements, only representative views of the project are shown."
     },
     summary: {
-      es: "SaaS gastronómico tipo marketplace. Diseño UX/UI web + prototipo mobile en Figma.",
-      en: "FoodTech SaaS marketplace. UX/UI web design + mobile prototype in Figma."
+      es: "Diseño que agilizó el desarrollo un 35–40% — Design System y prototipo web y mobile para SaaS gastronómico.",
+      en: "Design that sped up development by 35–40% — Design System and web & mobile prototype for a FoodTech SaaS."
     },
     image: "/Proyects-UX-UI/prototypo-mobile-portada.png",
     mobilePreviewImage: "/mobile-preview/HOME-donmorfi.png",
@@ -150,8 +150,8 @@ export const projects: Project[] = [
       en: "End-to-end redesign of Correo Argentino's website, one of the country's most used postal services. I identified critical usability issues through heuristic evaluation, surveys, interviews, and tree testing. I synthesized findings into a user persona, journey maps, and a needs matrix, then defined the MVP using an FVD matrix. The redesign included evolutionary wireframes, A/B testing of key components, and real user validation achieving an 80% task success rate. The high-fidelity prototype is currently in development."
     },
     summary: {
-      es: "Rediseño UX/UI end-to-end con research, validación con usuarios y 80% de tasa de éxito en testing.",
-      en: "End-to-end UX/UI redesign with research, user validation and 80% task success rate in testing."
+      es: "80% de tasa de éxito en testing — rediseño end-to-end con research, wireframes y validación con usuarios reales.",
+      en: "80% task success rate in testing — end-to-end redesign with research, wireframes and real user validation."
     },
     image: "/correo-argentino/slice-01.png",
     youtube: "",
@@ -171,8 +171,8 @@ export const projects: Project[] = [
       en: "Real client: my own business. ChillaLabs is my hand-painted 3D figures venture, and I was both the designer and the client. I identified a concrete need — no digital presence — and designed the complete solution: visual identity, product catalog and contact experience. The result is live and actively in use."
     },
     summary: {
-      es: "Diseño UX/UI para negocio real propio — identidad, catálogo y experiencia de contacto en producción.",
-      en: "UX/UI design for my own real business — identity, catalog and contact experience in production."
+      es: "De cero a presencia digital activa — diseño completo de identidad y catálogo para mi propio emprendimiento.",
+      en: "From zero to live digital presence — full identity and catalog design for my own business venture."
     },
     image: "/chillalabs/slice-01.png",
     youtube: "",
@@ -198,8 +198,8 @@ export const projects: Project[] = [
       en: "Web platform to connect musicians with recording studios. Role as Frontend Developer & UX/UI Designer: interface design in Figma, authentication/registration forms, geolocation integration, development of key pages (bookings, dashboard, profiles) and global state management with Zustand."
     },
     summary: {
-      es: "Plataforma web para conectar músicos con estudios de grabación. UX/UI + Frontend.",
-      en: "Web platform to connect musicians with recording studios. UX/UI + Frontend."
+      es: "De estructura indefinida a experiencia clara — UX/UI y frontend para plataforma de reservas musicales.",
+      en: "From undefined structure to clear experience — UX/UI and frontend for a music studio booking platform."
     },
     image: "/Proyects-UX-UI/S1.png",
     technologies: ["UX Research", "Figma", "React", "Next.js", "Tailwind CSS", "Zustand"],
@@ -260,8 +260,8 @@ export const projects: Project[] = [
       en: "Complete UX process from scratch, no shortcuts. This academic project prioritized methodology over visual output: desk research, real user interviews, benchmarking, affinity and empathy maps, proto-personas, card sorting, MVP definition, user flows and UI design with Atomic Design. It is the project where I went deepest into research and learned to make evidence-based design decisions."
     },
     summary: {
-      es: "Proceso UX completo — research, síntesis, arquitectura de información y prototipo interactivo.",
-      en: "Full UX process — research, synthesis, information architecture and interactive prototype."
+      es: "Research sin atajos — proceso UX end-to-end con entrevistas, card sorting, Atomic Design y prototipo.",
+      en: "Research without shortcuts — end-to-end UX process with interviews, card sorting, Atomic Design and prototype."
     },
     image: "/Proyect-portadas/TaskApp-portada.png",
     mobilePreviewImages: [

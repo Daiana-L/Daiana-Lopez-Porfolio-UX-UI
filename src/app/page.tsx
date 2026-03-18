@@ -3,8 +3,10 @@ import Navbar from "@/components/navbar/navbar";
 import Hero from "@/components/hero/hero";
 import Proyects from "@/components/proyects/proyects";
 import TechCarousel from "@/components/home/TechCarousel";
+import AboutMe from "@/components/about/AboutMe";
 import Education from "@/components/education/Education";
 import Testimonial from "@/components/testimonial/Testimonial";
+import ScrollToTop from "@/components/ScrollToTop";
 import Contact from "@/components/contact/contact";
 import FloatingChat from "@/components/floatingChat/FloatingChat";
 import Footer from "@/components/footer/footer";
@@ -18,6 +20,9 @@ export default function Home() {
 
       {/* Hero */}
           <Hero/>
+
+      {/* Sobre mí */}
+          <AboutMe />
 
       {/* Proyectos */}
           <Proyects/>
@@ -42,6 +47,9 @@ export default function Home() {
       
       {/* Language Toggle */}
       <LanguageToggle />
+
+      {/* Scroll to top */}
+      <ScrollToTop />
     </main>
   );
 };
