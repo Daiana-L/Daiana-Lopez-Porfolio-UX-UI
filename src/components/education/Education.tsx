@@ -58,7 +58,7 @@ export default function Education() {
   const t = content[language];
 
   return (
-    <section id="education" className="w-full py-16 px-4 sm:px-6">
+    <section id="education" className="w-full py-8 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
