@@ -181,6 +181,22 @@ export default function ProjectPage({
                                     </p>
                                 </div>
                             )}
+                            {project.decisionesEstrategicas && (
+                                <div>
+                                    <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
+                                        <span className="w-0.5 h-3 bg-green-400 rounded-full"></span>
+                                        {t.strategicDecisions}
+                                    </h2>
+                                    <ul className="text-gray-300 text-xs sm:text-sm leading-relaxed space-y-1">
+                                        {(project.decisionesEstrategicas as any)?.[language]?.map((decision: string, index: number) => (
+                                            <li key={index} className="flex items-start gap-2">
+                                                <span className="text-green-400 mt-1">•</span>
+                                                <span>{decision}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                             {project.impacto && (
                                 <div>
                                     <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
@@ -189,6 +205,17 @@ export default function ProjectPage({
                                     </h2>
                                     <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                                         {getTranslatedContent(project.impacto)}
+                                    </p>
+                                </div>
+                            )}
+                            {project.aprendizajes && (
+                                <div>
+                                    <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
+                                        <span className="w-0.5 h-3 bg-pink-400 rounded-full"></span>
+                                        {t.learnings}
+                                    </h2>
+                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                        {getTranslatedContent(project.aprendizajes)}
                                     </p>
                                 </div>
                             )}
