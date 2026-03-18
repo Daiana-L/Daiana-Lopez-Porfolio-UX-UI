@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
@@ -65,7 +66,7 @@ export default function AboutMe() {
             ))}
           </motion.div>
 
-          {/* Tags / rasgos */}
+          {/* Foto + Tags */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,6 +74,17 @@ export default function AboutMe() {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
+            {/* Foto */}
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <Image
+                src="/foto-dai.jpg"
+                alt="Daiana Lopez con figura impresa en 3D"
+                width={500}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
             {/* Decorative block */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
               <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">
