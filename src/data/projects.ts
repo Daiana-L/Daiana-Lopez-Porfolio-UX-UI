@@ -191,6 +191,50 @@ export const projects: Project[] = [
     caseStudyCategory: "PROYECTO PERSONAL · UX RESEARCH + UI DESIGN",
   },
   {
+    slug: "chillalabs-flujo",
+    name: "Flujo de compra — ChillaLabs",
+    technologies: ["UX Research", "UX/UI Design", "Figma", "Prototyping", "Next.js", "Supabase"],
+    description: {
+      es: "Cliente real: mi propio emprendimiento. ChillaLabs vendía figuras por WhatsApp e Instagram sin ningún proceso estructurado. Diseñé y desarrollé un flujo de compra end-to-end con 4 pasos claros, 2 métodos de pago (MercadoPago y transferencia bancaria), cálculo de envío por código postal y estados de pedido en tiempo real (Pendiente → Pagado → Enviado). El resultado es una tienda activa con proceso de compra completo y seguimiento de pedidos.",
+      en: "Real client: my own business. ChillaLabs used to sell figures through WhatsApp and Instagram with no structured process. I designed and developed an end-to-end purchase flow with 4 clear steps, 2 payment methods (MercadoPago and bank transfer), postal code-based shipping calculation, and real-time order status tracking (Pending → Paid → Shipped). The result is an active store with a complete purchase flow and order tracking."
+    },
+    summary: {
+      es: "De WhatsApp a tienda real — flujo de compra end-to-end con estados de pedido para mi propio emprendimiento.",
+      en: "From WhatsApp to real store — end-to-end purchase flow with order tracking for my own business."
+    },
+    image: "/chillalabs-flujo/slice-01.png",
+    youtube: "",
+    caseStudySlices: Array.from({ length: 5 }, (_, i) => `/chillalabs-flujo/slice-${String(i + 1).padStart(2, "0")}.png`),
+    problema: {
+      es: "Los clientes consultaban por Instagram o WhatsApp, sin precio fijo, sin seguimiento y sin forma de pagar online. Cada venta era una conversación distinta y sin estructura, lo que generaba fricción, confusión y pérdida de ventas potenciales.",
+      en: "Customers would inquire via Instagram or WhatsApp with no fixed pricing, no tracking, and no way to pay online. Each sale was a separate, unstructured conversation, causing friction, confusion, and lost potential sales."
+    },
+    decisionesEstrategicas: {
+      es: [
+        "Diseñé un flujo de 4 pasos: datos del comprador → cálculo de envío → método de pago → confirmación.",
+        "Integré MercadoPago y transferencia bancaria como opciones de pago.",
+        "Agregué cálculo de envío por código postal con dos couriers (Correo Argentino y Andreani).",
+        "Implementé estados de pedido visibles para el comprador: Pendiente, Pagado y Enviado.",
+        "Creé un panel de administración para gestionar pedidos y actualizar estados."
+      ],
+      en: [
+        "Designed a 4-step flow: buyer info → shipping calculation → payment method → confirmation.",
+        "Integrated MercadoPago and bank transfer as payment options.",
+        "Added postal code-based shipping with two couriers (Correo Argentino and Andreani).",
+        "Implemented visible order statuses for the buyer: Pending, Paid and Shipped.",
+        "Built an admin panel to manage orders and update statuses."
+      ]
+    },
+    impacto: {
+      es: "El proceso de venta pasó de ser una conversación informal por redes sociales a un flujo claro, automatizado y profesional. Los clientes ahora pueden comprar de forma independiente, pagar online y hacer seguimiento de su pedido sin necesidad de contactar al vendedor.",
+      en: "The sales process went from an informal social media conversation to a clear, automated, and professional flow. Customers can now buy independently, pay online, and track their order without needing to contact the seller."
+    },
+    caseStudyContext: ["Proyecto Personal", "Negocio"],
+    caseStudyTools: ["Figma", "Next.js", "Supabase", "MercadoPago"],
+    caseStudyType: "UX/UI DESIGN · E-COMMERCE",
+    caseStudyCategory: "PROYECTO PERSONAL · FLUJO DE COMPRA",
+  },
+  {
     slug: "studioconnect",
     name: "StudioConnect",
     description: {
