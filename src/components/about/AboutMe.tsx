@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -13,6 +14,8 @@ const content = {
       "En el proceso de formarme como desarrolladora, descubrí el mundo del UX/UI y conecté completamente con esa disciplina. Me interesa diseñar experiencias que no solo sean visualmente atractivas, sino que ayuden tanto a los usuarios a resolver sus necesidades como a los negocios a crecer y funcionar mejor.",
       "A la hora de diseñar, disfruto pensar cada detalle: desde la lógica de uso hasta la estética final. Me motiva crear productos que tengan sentido, que estén bien pensados y que generen impacto real.",
     ],
+    readMore: "Leer más",
+    readLess: "Leer menos",
     tags: ["Buenos Aires", "Open to work", "UX/UI + Frontend", "Emprendedora"],
   },
   en: {
@@ -24,6 +27,8 @@ const content = {
       "While training as a developer, I discovered the world of UX/UI and connected completely with that discipline. I'm interested in designing experiences that are not only visually attractive, but that help users solve their needs and businesses grow and function better.",
       "When designing, I enjoy thinking through every detail: from the logic of use to the final aesthetic. I'm motivated to create products that make sense, are well thought out, and generate real impact.",
     ],
+    readMore: "Read more",
+    readLess: "Read less",
     tags: ["Buenos Aires", "Open to work", "UX/UI + Frontend", "Entrepreneur"],
   },
 };
@@ -31,6 +36,7 @@ const content = {
 export default function AboutMe() {
   const { language } = useLanguage();
   const t = content[language];
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <section id="about" className="w-full pt-6 pb-12 px-4 sm:px-6 scroll-mt-16 md:scroll-mt-24">
@@ -59,11 +65,25 @@ export default function AboutMe() {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
+            {/* Mobile: mostrar solo 2 párrafos hasta expandir */}
             {t.paragraphs.map((p, i) => (
-              <p key={i} className="text-slate-400 text-sm leading-relaxed">
+              <p
+                key={i}
+                className={`text-slate-400 text-sm leading-relaxed ${
+                  i >= 2 ? "hidden md:block" : ""
+                } ${i >= 2 && expanded ? "!block" : ""}`}
+              >
                 {p}
               </p>
             ))}
+
+            {/* Botón leer más — solo mobile */}
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="md:hidden self-start text-xs font-semibold text-sky-400 hover:text-sky-300 transition"
+            >
+              {expanded ? `↑ ${t.readLess}` : `↓ ${t.readMore}`}
+            </button>
           </motion.div>
 
           {/* Foto */}

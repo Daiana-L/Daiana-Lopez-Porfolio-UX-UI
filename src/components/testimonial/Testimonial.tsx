@@ -64,19 +64,17 @@ export default function Testimonial() {
             {t.quote}
           </p>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-cyan-500 flex items-center justify-center flex-shrink-0">
               <span className="text-[#07091C] font-bold text-sm">MS</span>
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
               <p className="text-slate-50 font-semibold text-sm">{t.name}</p>
               <p className="text-slate-400 text-xs">{t.role}</p>
             </div>
-            <div className="ml-auto">
-              <span className="text-xs font-medium px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 border border-sky-400/20">
-                {t.context}
-              </span>
-            </div>
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 border border-sky-400/20 whitespace-nowrap">
+              {t.context}
+            </span>
           </div>
         </motion.div>
       </div>
