@@ -93,6 +93,9 @@ export default function AboutMe() {
           viewport={{ once: true }}
           className="mt-6 flex flex-wrap items-center gap-2"
         >
+          <span className="text-xs font-semibold uppercase tracking-widest text-slate-500 mr-1">
+            En pocas palabras:
+          </span>
           {t.tags.map((tag, i) => (
             <span
               key={i}
