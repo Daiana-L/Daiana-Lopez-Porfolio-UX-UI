@@ -133,8 +133,8 @@ export const projects: Project[] = [
       ]
     },
     impacto: {
-      es: "El rediseño permitió una navegación más intuitiva, mayor claridad en la gestión de productos y una experiencia más fluida tanto para clientes como para administradores.",
-      en: "The redesign enabled more intuitive navigation, greater clarity in product management and a smoother experience for both customers and administrators."
+      es: "El diseño y prototipado en Figma permitió agilizar el desarrollo de interfaces web y mobile en un 35–40%, ya que los desarrolladores contaban con especificaciones claras, componentes definidos y flujos listos para implementar. Además, mejoró la navegación, la claridad en la gestión de productos y la experiencia general de clientes y administradores.",
+      en: "The design and prototyping in Figma helped speed up web and mobile interface development by 35–40%, as developers had clear specifications, defined components, and ready-to-implement flows. It also improved navigation, clarity in product management, and the overall experience for both customers and administrators."
     },
     aprendizajes: {
       es: "Trabajar en un producto real durante 6 meses me permitió comprender la importancia de diseñar considerando limitaciones técnicas, tiempos de desarrollo y coherencia entre diseño e implementación.",
