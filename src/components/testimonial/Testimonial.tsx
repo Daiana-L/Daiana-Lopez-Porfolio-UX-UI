@@ -29,7 +29,7 @@ export default function Testimonial() {
 
   return (
     <section className="w-full py-16 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
