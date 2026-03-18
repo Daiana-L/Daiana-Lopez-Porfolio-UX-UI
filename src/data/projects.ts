@@ -230,7 +230,7 @@ export const projects: Project[] = [
       en: "The sales process went from an informal social media conversation to a clear, automated, and professional flow. Customers can now buy independently, pay online, and track their order without needing to contact the seller."
     },
     caseStudyContext: ["Proyecto Personal", "Negocio"],
-    caseStudyTools: ["Figma"],
+    caseStudyTools: ["Figma", "FigJam"],
     caseStudyType: "UX/UI DESIGN · E-COMMERCE",
     caseStudyCategory: "PROYECTO PERSONAL · FLUJO DE COMPRA",
   },
