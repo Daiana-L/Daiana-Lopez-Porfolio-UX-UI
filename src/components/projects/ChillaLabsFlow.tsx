@@ -113,7 +113,7 @@ function DesktopNode({ step, small = false }: { step: Step; small?: boolean }) {
       <span className={`absolute -top-2.5 left-2 z-10 text-[8px] font-bold px-1.5 py-0.5 rounded-full shadow-sm ${s.num}`}>
         {step.num}
       </span>
-      <div className={`w-full min-h-[56px] flex flex-col items-center justify-center rounded-xl border-2 shadow-sm px-2 pt-4 pb-2 ${s.bg} ${s.text} ${s.border}`}>
+      <div className={`w-full min-h-[56px] flex flex-col items-center justify-center rounded-xl border-2 shadow-sm px-2 py-4 ${s.bg} ${s.text} ${s.border}`}>
         <p className={`font-semibold leading-tight text-center w-full ${small ? "text-[7.5px]" : "text-[8.5px]"}`}>{step.label}</p>
         {step.sub && <p className="text-[7px] opacity-55 mt-0.5 leading-tight text-center w-full">{step.sub}</p>}
       </div>
