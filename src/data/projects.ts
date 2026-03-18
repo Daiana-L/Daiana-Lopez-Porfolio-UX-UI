@@ -202,7 +202,7 @@ export const projects: Project[] = [
       es: "De WhatsApp a tienda real — flujo de compra end-to-end con estados de pedido para mi propio emprendimiento.",
       en: "From WhatsApp to real store — end-to-end purchase flow with order tracking for my own business."
     },
-    image: "/chillalabs-flujo/slice-01.png",
+    image: "/chillalabs-flujo/slice-04.png",
     youtube: "",
     caseStudySlices: Array.from({ length: 5 }, (_, i) => `/chillalabs-flujo/slice-${String(i + 1).padStart(2, "0")}.png`),
     problema: {
