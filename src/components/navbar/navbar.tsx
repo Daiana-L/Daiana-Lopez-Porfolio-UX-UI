@@ -38,7 +38,7 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/#technologies" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#tech" className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.technologies}
             </a>
           </li>
@@ -79,7 +79,7 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/#technologies" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
+            <a href="/#tech" onClick={toggleMenu} className="font-medium text-sm text-[#94A3B8] hover:text-[#07091C] hover:bg-[#1CCDEC] rounded-lg px-3 py-2 transition-all duration-300 ease-in-out">
               {t.technologies}
             </a>
           </li>
