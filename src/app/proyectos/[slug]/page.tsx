@@ -160,7 +160,7 @@ export default function ProjectPage({
                     {/* Overview / Problemática / Impacto */}
                     {(project.description || project.problema || project.impacto) && (
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 flex flex-col gap-4">
-                            {project.description && (
+                            {project.description && project.slug !== "chillalabs-flujo" && (
                                 <div>
                                     <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
                                         <span className="w-0.5 h-3 bg-sky-400 rounded-full"></span>
@@ -171,7 +171,7 @@ export default function ProjectPage({
                                     </p>
                                 </div>
                             )}
-                            {project.problema && (
+                            {project.problema && project.slug !== "chillalabs-flujo" && (
                                 <div>
                                     <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
                                         <span className="w-0.5 h-3 bg-orange-400 rounded-full"></span>
