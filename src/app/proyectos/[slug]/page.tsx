@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar/navbar";
 import { projects } from "@/data/projects";
 import ProjectResponsiveMedia from "@/components/projects/ProjectResponsiveMedia";
 import CaseStudyCarousel from "@/components/projects/CaseStudyCarousel";
+import ChillaLabsFlow from "@/components/projects/ChillaLabsFlow";
 import { PiGlobeBold, PiDeviceMobileBold, PiPaletteBold } from "react-icons/pi";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getTranslation } from '@/translations';
@@ -222,8 +223,11 @@ export default function ProjectPage({
                         </div>
                     )}
 
-                    {/* Carousel */}
-                    <CaseStudyCarousel slices={project.caseStudySlices} note={project.caseStudyNote} />
+                    {/* Flow diagram o Carousel */}
+                    {project.slug === "chillalabs-flujo"
+                      ? <ChillaLabsFlow />
+                      : <CaseStudyCarousel slices={project.caseStudySlices} note={project.caseStudyNote} />
+                    }
                 </div>
             </main>
         );
