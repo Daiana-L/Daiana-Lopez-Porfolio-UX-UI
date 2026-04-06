@@ -223,6 +223,35 @@ export default function ProjectPage({
                         </div>
                     )}
 
+                    {/* PDF Case Study (only for correo-argentino) */}
+                    {project.slug === "correo-argentino" && (
+                        <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8">
+                            <div className="flex items-center justify-between mb-3">
+                                <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                                    <span className="w-0.5 h-3 bg-sky-400 rounded-full"></span>
+                                    Case Study Completo
+                                </h2>
+                                <a
+                                    href="/correo-argentino/case-study.pdf"
+                                    download
+                                    className="inline-flex items-center gap-1.5 text-xs text-sky-400 hover:text-sky-300 border border-sky-500/30 hover:border-sky-400/60 px-3 py-1.5 rounded-lg transition-all duration-200"
+                                >
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                    Descargar PDF
+                                </a>
+                            </div>
+                            <div className="rounded-xl overflow-hidden border border-gray-800/60 bg-gray-900/40" style={{height: '70vh'}}>
+                                <iframe
+                                    src="/correo-argentino/case-study.pdf"
+                                    className="w-full h-full"
+                                    title="Correo Argentino — Case Study PDF"
+                                />
+                            </div>
+                        </div>
+                    )}
+
                     {/* Flow diagram o Carousel */}
                     {project.slug === "chillalabs-flujo"
                       ? <ChillaLabsFlow />
