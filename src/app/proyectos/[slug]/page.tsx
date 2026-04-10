@@ -255,7 +255,7 @@ export default function ProjectPage({
                     {/* Flow diagram o Carousel */}
                     {project.slug === "chillalabs-flujo"
                       ? <ChillaLabsFlow />
-                      : <CaseStudyCarousel slices={project.caseStudySlices} note={project.caseStudyNote} />
+                      : project.slug !== "correo-argentino" && <CaseStudyCarousel slices={project.caseStudySlices} note={project.caseStudyNote} />
                     }
                 </div>
             </main>
