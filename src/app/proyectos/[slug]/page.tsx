@@ -223,7 +223,7 @@ export default function ProjectPage({
                         </div>
                     )}
 
-                    {/* PDF Case Study (only for correo-argentino) */}
+                    {/* Case Study Image (only for correo-argentino) */}
                     {project.slug === "correo-argentino" && (
                         <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8">
                             <div className="flex items-center justify-between mb-3">
@@ -242,13 +242,11 @@ export default function ProjectPage({
                                     Descargar PDF
                                 </a>
                             </div>
-                            <div className="rounded-xl overflow-hidden border border-gray-800/60 bg-gray-900/40" style={{height: '70vh'}}>
-                                <iframe
-                                    src="/correo-argentino/case-study.pdf"
-                                    className="w-full h-full"
-                                    title="Correo Argentino — Case Study PDF"
-                                />
-                            </div>
+                            <img
+                                src="/correo-argentino/case-study.png"
+                                alt="Correo Argentino — Case Study"
+                                className="w-full rounded-xl"
+                            />
                         </div>
                     )}
 
