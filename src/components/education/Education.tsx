@@ -25,6 +25,15 @@ const content = {
         detail:
           "Modalidad sincrónica · 135 horas · Nota: Bueno. Certificado emitido por la Secretaría de Cultura y Extensión Universitaria de la UTN FRBA, con certificación blockchain.",
       },
+      {
+        institution: "Henry Bootcamp",
+        credential: "Desarrollo Web Full Stack",
+        period: "Octubre 2025",
+        status: "completado",
+        statusLabel: "Certificado obtenido",
+        detail:
+          "Carrera intensiva de Desarrollo Web Full Stack. Certificado emitido el 01/10/2025.",
+      },
     ],
   },
   en: {
@@ -48,6 +57,15 @@ const content = {
         statusLabel: "Certificate obtained",
         detail:
           "Synchronous modality · 135 hours · Grade: Good. Certificate issued by the Secretariat of Culture and University Extension of UTN FRBA, with blockchain certification.",
+      },
+      {
+        institution: "Henry Bootcamp",
+        credential: "Full Stack Web Development",
+        period: "October 2025",
+        status: "completado",
+        statusLabel: "Certificate obtained",
+        detail:
+          "Intensive Full Stack Web Development career. Certificate issued on 01/10/2025.",
       },
     ],
   },

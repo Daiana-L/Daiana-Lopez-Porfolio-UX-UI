@@ -26,6 +26,7 @@ const techColors: { [key: string]: { bg: string; text: string } } = {
     Figma: { bg: "bg-purple-900/50", text: "text-purple-400" },
     "Adobe (Photoshop)": { bg: "bg-blue-900/50", text: "text-blue-400" },
     Webflow: { bg: "bg-pink-900/50", text: "text-pink-400" },
+    "Claude Code": { bg: "bg-orange-900/50", text: "text-orange-300" },
 };
 
 export default function TechCarousel({
@@ -47,6 +48,7 @@ export default function TechCarousel({
             { name: "Figma make" },
             { name: "Wireframe" },
             { name: "Adobe" },
+            { name: "Claude Code" },
         ],
         []
     );

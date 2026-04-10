@@ -9,6 +9,7 @@ const technologies = [
   { name: "Tailwind CSS", img: "/TW.png" },
   { name: "JavaScript", img: "/JS.png" },
   { name: "PostgreSQL", img: "/postgres.png" },
+  { name: "Claude Code", img: "/claude-code.png" },
 ];
 
 function Tecnologis() {
