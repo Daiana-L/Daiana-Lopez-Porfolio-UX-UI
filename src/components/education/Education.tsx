@@ -10,11 +10,11 @@ const content = {
       {
         institution: "Universidad Tecnológica Nacional — UTN Buenos Aires",
         credential: "Diplomatura en UX/UI Design",
-        period: "2026 — En curso",
-        status: "en curso",
-        statusLabel: "Proyecto final",
+        period: "2026",
+        status: "completado",
+        statusLabel: "Certificado obtenido",
         detail:
-          "Actualmente cursando el proyecto final para la obtención de la diplomatura en UX/UI Design.",
+          "Diplomatura en UX/UI Design obtenida en la Universidad Tecnológica Nacional — UTN Buenos Aires.",
       },
       {
         institution: "Universidad Tecnológica Nacional — Facultad Regional Buenos Aires",
@@ -43,11 +43,11 @@ const content = {
       {
         institution: "Universidad Tecnológica Nacional — UTN Buenos Aires",
         credential: "Diploma in UX/UI Design",
-        period: "2026 — In progress",
-        status: "en curso",
-        statusLabel: "Final project",
+        period: "2026",
+        status: "completado",
+        statusLabel: "Certificate obtained",
         detail:
-          "Currently completing the final project to obtain the UX/UI Design diploma.",
+          "UX/UI Design diploma obtained at Universidad Tecnológica Nacional — UTN Buenos Aires.",
       },
       {
         institution: "Universidad Tecnológica Nacional — Facultad Regional Buenos Aires",
