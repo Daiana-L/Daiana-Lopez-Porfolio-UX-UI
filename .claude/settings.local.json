@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(magick:*)",
+      "Bash(gswin64c:*)",
+      "Bash(node:*)",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(python3.10 -c \"import fitz; print\\('pymupdf ok', fitz.__version__\\)\" 2>/dev/null || py -3.10 -c \"import fitz; print\\('pymupdf ok'\\)\" 2>/dev/null || echo \"need to find py3.10\")",
+      "Bash(py:*)",
+      "Bash(cd:*)",
+      "Bash(find 'C:\\\\Users\\\\daian\\\\Desktop\\\\Mi porfolio - UXUI' -type f -iname *chilla*)",
+      "Bash(where magick:*)",
+      "Bash(where convert:*)",
+      "Bash(where gs:*)",
+      "Bash(where pdftoppm:*)",
+      "Bash(python -c \"import pdf2image; print\\(''pdf2image ok''\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\(''''PIL ok''''\\)\")",
+      "Bash(npm list:*)",
+      "Bash(python -c \"import fitz; print\\(''PyMuPDF ok''\\)\")",
+      "Bash(python:*)",
+      "mcp__plugin_figma_figma__generate_diagram",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__use_figma",
+      "mcp__plugin_figma_figma__get_screenshot"
+    ]
+  }
+}
