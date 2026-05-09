@@ -166,27 +166,43 @@ caseStudyContext: ["Académico", "Individual"],
     name: "ChillaLabs",
     technologies: ["UX Research", "Figma", "UX/UI Design", "Prototyping"],
     description: {
-      es: "Cliente real: mi propio emprendimiento. ChillaLabs es mi negocio de figuras 3D pintadas a mano, y yo fui tanto la diseñadora como la cliente. Identifiqué una necesidad concreta — no tener presencia digital — y diseñé la solución completa: identidad visual, catálogo de productos y experiencia de contacto. El resultado está en uso real y activo.",
-      en: "Real client: my own business. ChillaLabs is my hand-painted 3D figures venture, and I was both the designer and the client. I identified a concrete need — no digital presence — and designed the complete solution: visual identity, product catalog and contact experience. The result is live and actively in use."
+      es: "Proyecto basado en un emprendimiento real de venta de figuras 3D pintadas a mano. Diseñé y desarrollé una experiencia de e-commerce completa, enfocada en optimizar la exhibición de productos, facilitar la toma de decisión y mejorar el proceso de compra.",
+      en: "Project based on a real hand-painted 3D figures business. I designed and developed a complete e-commerce experience focused on optimizing product display, facilitating decision-making and improving the purchase process."
     },
     summary: {
-      es: "De cero a presencia digital activa — diseño completo de identidad y catálogo para mi propio emprendimiento.",
-      en: "From zero to live digital presence — full identity and catalog design for my own business venture."
+      es: "E-commerce end-to-end para mi propio emprendimiento — del caos en redes a una tienda profesional y escalable.",
+      en: "End-to-end e-commerce for my own business — from social media chaos to a professional, scalable store."
     },
     image: "/chillalabs/slice-01.png",
     youtube: "",
     caseStudySlices: Array.from({ length: 5 }, (_, i) => `/chillalabs/slice-${String(i + 1).padStart(2, "0")}.png`),
     problema: {
-      es: "ChillaLabs no contaba con un catálogo digital donde los clientes pudieran ver los productos disponibles. Las consultas se gestionaban de forma informal por redes sociales, sin información clara sobre precios, stock ni variantes. Esto generaba fricción en el proceso de compra y dificultaba el crecimiento del negocio.",
-      en: "ChillaLabs had no digital catalog where clients could browse available products. Inquiries were handled informally through social media, with no clear information on pricing, stock or variants. This created friction in the buying process and hindered business growth."
+      es: "El negocio no contaba con una plataforma estructurada de venta. Las compras se gestionaban de forma manual por redes sociales, sin visibilidad clara de productos, precios, stock ni variantes, generando fricción y pérdida de oportunidades de conversión.",
+      en: "The business had no structured sales platform. Purchases were managed manually through social media, with no clear visibility of products, prices, stock or variants, creating friction and lost conversion opportunities."
+    },
+    decisionesEstrategicas: {
+      es: [
+        "Catálogo de productos con filtros y organización clara",
+        "Fichas de producto con información detallada (precio, variantes, disponibilidad)",
+        "Flujo de compra simplificado",
+        "Sistema de contacto optimizado orientado a conversión",
+        "Identidad visual coherente para generar confianza",
+      ],
+      en: [
+        "Product catalog with filters and clear organization",
+        "Product sheets with detailed information (price, variants, availability)",
+        "Simplified purchase flow",
+        "Optimized contact system oriented to conversion",
+        "Coherent visual identity to build trust",
+      ]
     },
     impacto: {
-      es: "El diseño permitió centralizar el catálogo de productos en un solo lugar accesible, mejorar la comunicación con los clientes y darle al emprendimiento una imagen profesional y coherente. Esto facilitó el proceso de venta y aumentó la confianza de los compradores.",
-      en: "The design made it possible to centralize the product catalog in one accessible place, improve communication with clients and give the venture a professional and coherent image. This streamlined the sales process and increased buyer confidence."
+      es: "• Reducción de fricción en el proceso de compra\n• Mejora en la claridad de la oferta y toma de decisión\n• Incremento en la confianza del usuario\n• Base escalable para futuras funcionalidades de e-commerce (checkout, pagos, etc.)",
+      en: "• Reduced friction in the purchase process\n• Improved clarity of offer and decision-making\n• Increased user trust\n• Scalable foundation for future e-commerce features (checkout, payments, etc.)"
     },
     caseStudyContext: ["Proyecto Personal", "Negocio"],
     caseStudyTools: ["Figma", "React", "Next.js", "Tailwind CSS"],
-    caseStudyType: "DISEÑO UX/UI · END-TO-END",
+    caseStudyType: "E-COMMERCE UX/UI · END-TO-END",
     caseStudyCategory: "PROYECTO PERSONAL · UX RESEARCH + UI DESIGN",
   },
   {

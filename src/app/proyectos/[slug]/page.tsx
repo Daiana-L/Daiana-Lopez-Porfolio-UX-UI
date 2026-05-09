@@ -186,7 +186,7 @@ export default function ProjectPage({
                                 <div>
                                     <h2 className="text-sm sm:text-base font-bold text-white mb-1 flex items-center gap-1">
                                         <span className="w-0.5 h-3 bg-green-400 rounded-full"></span>
-                                        {t.strategicDecisions}
+                                        {project.slug === "chillalabs" ? "Solución" : t.strategicDecisions}
                                     </h2>
                                     <ul className="text-gray-300 text-xs sm:text-sm leading-relaxed space-y-1">
                                         {(project.decisionesEstrategicas as any)?.[language]?.map((decision: string, index: number) => (
@@ -204,7 +204,7 @@ export default function ProjectPage({
                                         <span className="w-0.5 h-3 bg-blue-400 rounded-full"></span>
                                         {t.impact}
                                     </h2>
-                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed whitespace-pre-line">
                                         {getTranslatedContent(project.impacto)}
                                     </p>
                                 </div>
